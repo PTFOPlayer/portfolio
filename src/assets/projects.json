@@ -1,0 +1,24 @@
+{
+    "projects": [
+        {
+            "title":"msr_server",
+            "tools":["shell", "c++"]
+        },
+        {
+            "title":"hwi_rs",
+            "tools":["rust, shell"]
+        },
+        {
+            "title":"screenpad_rs",
+            "tools":["rust, shell"]
+        },
+        {
+            "title":"euclides",
+            "tools":["rust"]
+        },
+        {
+            "title":"Discord-Programmers-Bot",
+            "tools":["rust, shell, docker, mongoDB"]
+        }
+    ]
+}

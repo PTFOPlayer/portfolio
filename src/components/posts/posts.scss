@@ -1,0 +1,21 @@
+.post {
+    margin-bottom: 5vh;
+    background-color: #1a1d22;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.content {
+    width: 75vw;
+    ul {
+        list-style: none;
+    }
+    li {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
