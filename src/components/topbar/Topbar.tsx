@@ -7,12 +7,12 @@ export default function Topbar() {
     <div className="topbar">
       <div className="top">
         <div className="top-left">
-          <a href="https://github.com/PTFOPlayer/technews"><i className="topIcon fab fa-github"></i></a>
+          <a href="https://github.com/PTFOPlayer/"><i className="topIcon fab fa-github"></i></a>
         </div>
         <div className="top-center">
           <ul className="top-list">
             <li className="top-list-item"><a href='/portfolio' className="inherit">Home</a></li>
-            <li className="top-list-item"><a href='/portfolio' className="inherit">Projects</a></li>
+            <li className="top-list-item"><a href='/portfolio/#/projects' className="inherit">Projects</a></li>
             <li className="top-list-item"><a href='/portfolio' className="inherit">Contacts</a></li>
           </ul>
         </div>
