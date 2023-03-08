@@ -2,6 +2,9 @@ import * as React from "react";
 import "./description.scss"
 
 export default function Description() {
+  const [isReactSpinning, setReactSpin] = React.useState(false);
+  const [isRustSpinning, setRustSpin] = React.useState(false);
+  const [isTuxJumping, setTuxJumping] = React.useState(false);
 
   return (
     <div className="description">
@@ -9,23 +12,40 @@ export default function Description() {
       <p> I'm <p className="dev">full-stack</p> developer from Poland.
         <br /><br />
         I'm using
-        <p className="react"><i className="fa-brands fa-react"></i>React</p>
+        <p className="react" 
+          onMouseEnter={() => { setReactSpin(true) }} 
+          onMouseLeave={() => { setReactSpin(false) }}>
+          {isReactSpinning ? <i className="fa-brands fa-react spin"/> : <i className="fa-brands fa-react"/>}
+          React
+        </p>
         and
         <p className="sass"><i className="fab fa-sass"></i> Sass</p>
         to make frontend, for database I prefer
         <p className="mongodb"><i className="fas fa-database"></i>MongoDB</p>
         as database. I can program in
-        <p className="rust"><i className='fab fa-rust' />Rust </p>,
+        <p className="rust"
+          onMouseEnter={() => { setRustSpin(true) }}
+          onMouseLeave={() => { setRustSpin(false) }}>
+          {isRustSpinning ? <i className='fab fa-rust spin' /> : <i className='fab fa-rust' />}
+          Rust 
+        </p>,
         <p className="cpp">C++</p>,
-        <p className="js"><i className="fa-brands fa-js" /> Javascript</p> and <p className="python"><i className="fa-brands fa-python" />Python</p>.
+        <p className="js"><i className="fa-brands fa-js" /> Javascript</p>,
+        <p className="ts"> Typescript</p> 
+        and 
+        <p className="python"><i className="fa-brands fa-python" />Python</p>.
         <br /><br />
         I'm using
         <p className="manjaro">Manjaro</p>
-        as my main operating system, and I generaly prefer
-        <p className="linux"><i className="fab fa-linux"></i>Linux</p>
+        as my main operating system and I generaly prefer
+        <p className="linux"
+          onMouseEnter={() => { setTuxJumping(true) }} 
+          onMouseLeave={() => { setTuxJumping(false) }}>
+          {isTuxJumping ? <i className="fab fa-linux jump"></i> : <i className="fab fa-linux"></i>}
+          Linux</p>
         based systems over
         <p className="windows"><i className="fa-brands fa-windows"></i>Windows</p>
-        , but I have no problem with using it too, in fact I'm using it for gaming. 
+        , but I have no problem with using it too, in fact I'm using it for gaming.
       </p>
     </div>);
 }
