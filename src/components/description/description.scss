@@ -1,0 +1,60 @@
+.description {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1d22;
+    width: 100vw;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height:calc(25vh + 75px);
+
+    p {
+        p {
+            padding-left: 3px;
+            padding-right: 3px;
+            white-space: nowrap;
+        }
+        .dev {
+            color: rgb(240, 42, 42);
+        }
+        .rust {
+            color: #d45404;
+        }
+        .python {
+            color: #306998;
+        }
+        .js {
+            color: #f0db4f;
+        }
+        .cpp {
+            color: #D26383;
+        }
+        .react {
+            color: #61DBFB;
+        }
+        .sass {
+            color: #C26191;
+        }
+        .mongodb {
+            color: #07AC4F;   
+        }
+        .linux {
+            color: #FFD134;
+        }
+        .windows {
+            color: #0178D4;
+        }
+        .manjaro {
+            color: #15987E;
+        }
+        display: inline;
+        width: 66vw;
+        font-size: calc(5px + 2vmin);
+    }
+    h1{
+        margin: 0;
+    }
+
+}
