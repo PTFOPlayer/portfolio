@@ -11,9 +11,9 @@ export default function Topbar() {
         </div>
         <div className="top-center">
           <ul className="top-list">
-            <li className="top-list-item"><a href='google.com' className="inherit">Home</a></li>
-            <li className="top-list-item"><a href='google.com' className="inherit">Projects</a></li>
-            <li className="top-list-item"><a href='google.com' className="inherit">Contacts</a></li>
+            <li className="top-list-item"><a href='/portfolio' className="inherit">Home</a></li>
+            <li className="top-list-item"><a href='/portfolio' className="inherit">Projects</a></li>
+            <li className="top-list-item"><a href='/portfolio' className="inherit">Contacts</a></li>
           </ul>
         </div>
         <div className="top-right" />
