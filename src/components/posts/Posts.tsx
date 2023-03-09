@@ -2,29 +2,11 @@ import * as React from "react";
 import projects_data from "../../assets/projects.json"
 import "./posts.scss"
 import "../../assets/langs.scss"
+import tools from "../../scripts/toolsColor";
 
 export default function Posts() {
 
   let data = projects_data.projects;
-
-  let tool = (tools: Array<String>) => {
-    return (
-      <>
-        {tools.map(tool => (
-          <li>
-            {
-              tool === "rust" ? <p className="rust"><i className='fab fa-rust' /> {tool}</p> :
-                tool === "mongodb" ? <p className="mongodb"><i className="fas fa-database" />MongoDB</p> :
-                  tool === "c++" ? <p className="cpp"> C++ </p> :
-                    tool === "shell" ? <p className="shell"><i className="fa-solid fa-terminal" /> shell </p> :
-                      tool === "docker" ? <p className="docker"><i className="fa-brands fa-docker" /> docker </p> :
-                        <p>{tool}</p>
-            }
-          </li>
-        ))}
-      </>
-    )
-  }
 
   return (
     <>
@@ -36,7 +18,7 @@ export default function Posts() {
               {element.title ? <h1>{element.title}</h1> : null}
               {element.tools ?
                 <ul>
-                  {tool(element.tools)}
+                  {tools(element.tools)}
                 </ul> : null
               }
             </div>
