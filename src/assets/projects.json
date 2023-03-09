@@ -2,15 +2,16 @@
     "projects": [
         {
             "title":"msr_server",
-            "tools":["shell", "c++"]
+            "tools":["shell", "c++"],
+            "link": "google.com"
         },
         {
             "title":"hwi_rs",
-            "tools":["rust, shell"]
+            "tools":["rust", "shell"]
         },
         {
             "title":"screenpad_rs",
-            "tools":["rust, shell"]
+            "tools":["rust", "shell"]
         },
         {
             "title":"euclides",
@@ -18,7 +19,7 @@
         },
         {
             "title":"Discord-Programmers-Bot",
-            "tools":["rust, shell, docker, mongoDB"]
+            "tools":["rust", "shell", "docker", "mongodb"]
         }
     ]
 }
