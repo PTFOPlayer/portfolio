@@ -4,18 +4,55 @@
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+    img {
+        margin: 1vw;
+        width: 10vw;
+        height: 10vw;
+        
+    }
 }
 
 .content {
+    .titleBar {
+        display: flex;
+        justify-content: space-between;
+    }
     width: 75vw;
     ul {
-        list-style: none;
-    }
-    li {
         list-style: none;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
+    li {
+        list-style: none;
+        margin-left: 1vw;
+    }
+}
+
+.projectDescription {
+    h3 {
+        color: lightgray
+    }
+    p {
+        color:grey;
+    }
+    a {
+        font-style: none;
+        text-decoration: none;
+        color: #363738;
+    }
+    a:hover {
+        animation: lightup 0.7s ease-in;
+        color: grey;
+    }
+}
+
+@keyframes lightup {
+    0% {color: #363738}
+    100% {color:grey}
 }
