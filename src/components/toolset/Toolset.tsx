@@ -8,7 +8,7 @@ export default function Toolset() {
     <>
       <div className="tools">
         <h1>Why those tools?</h1>
-        <p>Qucik explanation why a choose to learn that toolset.</p>
+        <p>Qucik explanation why I choose to learn that toolset.</p>
       </div>
       {data.tools.map((e, key: number)=> (
         <div key={key}>{Tool(e)}</div>
