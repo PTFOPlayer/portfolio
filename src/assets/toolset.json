@@ -1,16 +1,20 @@
 {
     "tools" : [
         {
-            "tool": "Rust"
+            "tool": "Rust",
+            "description": "lorem ipsum"
         },
         {
-            "tool": "C++"
+            "tool": "C++",
+            "description": "lorem ipsum"
         },
         {
-            "tool": "Javascript"
+            "tool": "Javascript",
+            "description": "lorem ipsum"
         },
         {
-            "tool": "Typescript"
+            "tool": "Typescript",
+            "description": "lorem ipsum"
         }
     ]
 }

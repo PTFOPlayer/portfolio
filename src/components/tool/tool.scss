@@ -1,0 +1,33 @@
+.tool {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1d22;
+    width: 100vw;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    .content {
+        width: 75vw;
+        display: flex;
+
+        span {
+            margin: 8vh;
+        }
+    }
+}
+
+.loaded {
+    animation: 1s ease-out 0s 1 slidein;
+    transform: translateX(0);
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

@@ -1,17 +1,17 @@
 import * as React from "react";
 import "./toolset.scss"
 import data from "../../assets/toolset.json"
-import tool from "../../scripts/toolColor";
+import Tool from "../tool/Tool";
 
 export default function Toolset() {
   return (
     <>
+      <div className="tools">
+        <h1>Why those tools?</h1>
+        <p>Qucik explanation why a choose to learn that toolset.</p>
+      </div>
       {data.tools.map((e)=> (
-        <div className="tool">
-          <div className="content">
-            <h1>{tool(e.tool)}</h1>
-          </div>  
-        </div>
+        <>{Tool(e)}</>
       ))}
     </>
   )

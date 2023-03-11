@@ -20,6 +20,10 @@
         {
             "title":"Discord-Programmers-Bot",
             "tools":["rust", "shell", "docker", "mongodb"]
+        },
+        {
+            "title":"Technews",
+            "tools":["javascript", "react", "css"]
         }
     ]
 }

@@ -1,16 +1,14 @@
-.tool {
+.tools {
     display: flex;
     flex-direction: column;
     background-color: #1a1d22;
-    margin-top: 5vh;
     width: 100vw;
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: center;
     justify-content: center;
     align-items: center;
-    .content {
+    margin-top: 5vh;
+    h1 {
         width: 75vw;
-        display: flex;
     }
 }
