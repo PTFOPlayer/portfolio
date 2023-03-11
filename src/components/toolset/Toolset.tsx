@@ -10,8 +10,8 @@ export default function Toolset() {
         <h1>Why those tools?</h1>
         <p>Qucik explanation why a choose to learn that toolset.</p>
       </div>
-      {data.tools.map((e)=> (
-        <>{Tool(e)}</>
+      {data.tools.map((e, key: number)=> (
+        <div key={key}>{Tool(e)}</div>
       ))}
     </>
   )
