@@ -9,11 +9,15 @@
             "description": "lorem ipsum"
         },
         {
-            "tool": "Javascript",
+            "tool": ["Javascript", "Typescript", "React", "Scss"],
             "description": "lorem ipsum"
         },
         {
-            "tool": "Typescript",
+            "tool": "Python",
+            "description": "lorem ipsum"
+        },
+        {
+            "tool": "MongoDB",
             "description": "lorem ipsum"
         }
     ]
