@@ -2,7 +2,7 @@ import * as React from "react";
 import projects_data from "../../assets/projects.json"
 import "./posts.scss"
 import "../../assets/langs.scss"
-import tools from "../../scripts/toolsColor";
+import toolsColor from "../../scripts/toolsColor";
 
 export default function Posts() {
 
@@ -18,7 +18,7 @@ export default function Posts() {
               {element.title ? <h1>{element.title}</h1> : null}
               {element.tools ?
                 <ul>
-                  {tools(element.tools)}
+                  {toolsColor.tools(element.tools)}
                 </ul> : null
               }
             </div>
