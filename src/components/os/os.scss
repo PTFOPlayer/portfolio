@@ -1,0 +1,48 @@
+.os {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1d22;
+    width: 100vw;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+
+    h1 {
+        width: 75vw;
+        display: flex;
+        flex-direction: row;
+
+        p {
+            margin: 1vw;
+        }
+
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+.osexp {
+    p {
+        width: 75vw;
+        text-align: justify;
+    }
+
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1d22;
+    width: 100vw;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}

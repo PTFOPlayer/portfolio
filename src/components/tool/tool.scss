@@ -6,28 +6,34 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    font-size: calc(5px + 2vmin);
     .content {
-        width: 75vw;
         display: flex;
-        
-        span {
-            margin: 8vh;
+        justify-content: center;
+        align-items: center;
+        .title {
+            width: 15vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-    }
-}
+        p{ 
+            width: 10vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 1vh;
+        }
 
-.loaded {
-    animation: 1s ease-out 0s 1 slidein;
-    transform: translateX(0);
-}
+        span {
+            margin-left: 8vw;
+            margin-right: 0;
+            text-align: end;
+        }
 
-@keyframes slidein {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
     }
 }

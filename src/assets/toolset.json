@@ -2,23 +2,23 @@
     "tools" : [
         {
             "tool": "Rust",
-            "description": "lorem ipsum"
+            "description": "This one is my favourite programming language. It gives me ability to develop software quicly and reliably, because i don't have to worry about memory safty thanks to borrow checker, and not handling some exception thanks to compiler and robust type system."
         },
         {
             "tool": "C++",
-            "description": "lorem ipsum"
+            "description": "I don't really us it very often, I like it because software written in it is easy to revrite in Rust. I have some projects written in it but i generaly try avoiding C++ as much as I can, but I learned it still because i wanted to have something closer to hardware like C but with modern features and capabilities to use OOP."
         },
         {
             "tool": ["Javascript", "Typescript", "React", "Scss"],
-            "description": "lorem ipsum"
+            "description": "I group this four, because I use them mainly for front end. I prefere Typescript over Javascript, but i have projects written in both. When it comes to React, I choose it over angular because it was easier for me to use. Scss / Sass whas chosen by me because I already knew CSS but i wanted to have some more capabilities than that offered by plain CSS. "
         },
         {
             "tool": "Python",
-            "description": "lorem ipsum"
+            "description": "Mainly learned because it was easy and quick for prototyping something on go. I found it realy helpfull when i had to solve some problem that wasn't requireing good performance and could be easly implemented. Being interpreted lather than compiled languages helps to quickly test software written in it on different machines and on different operating systems"
         },
         {
             "tool": "MongoDB",
-            "description": "lorem ipsum"
+            "description": "Database made out of Json files explains itself. For me it is one of the best methods of storing data that has to be used quickly and be sorted without creating crazy relations like in SQL."
         }
     ]
 }

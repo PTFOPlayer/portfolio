@@ -27,9 +27,9 @@ export default function Tool(e:any) {
         variants={variants}
         initial="hidden"
         animate={control}>
-        <div>
+        <div className="title">
           {typeof e.tool === "object" ? 
-          <h2>{toolsColor.tools(e.tool)}</h2> :
+          <h3>{toolsColor.tools(e.tool)}</h3> :
           <h1>{toolsColor.tool(e.tool)}</h1>}
         </div>
         {e.description ? <span>{e.description}</span> : null}
