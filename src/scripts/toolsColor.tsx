@@ -28,7 +28,7 @@ class toolColor {
         case "react":
           return <p className="react"><i className="fa-brands fa-react" /> React </p>
         case "css":
-          return <p className="css"><i className="fa-brands fa-css" /> Css </p>
+          return <p className="css"><i className="fa-brands fa-css3" /> Css </p>
         default:
           return <p>{t}</p>
       }
