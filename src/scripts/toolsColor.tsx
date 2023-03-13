@@ -10,7 +10,7 @@ class toolColor {
         case "rust": 
           return <p className="rust"><i className='fab fa-rust' /> Rust </p>
         case "mongodb": 
-          return <p className="mongodb"><i className="fas fa-database" />MongoDB</p> 
+          return <p className="mongodb"><i className="fas fa-database" /> MongoDB</p> 
         case "c++":
           return <p className="cpp"> C++ </p>
         case "shell":
@@ -27,6 +27,8 @@ class toolColor {
           return <p className="sass"><i className="fa-brands fa-sass" /> Scss </p>
         case "react":
           return <p className="react"><i className="fa-brands fa-react" /> React </p>
+        case "css":
+          return <p className="css"><i className="fa-brands fa-css" /> Css </p>
         default:
           return <p>{t}</p>
       }

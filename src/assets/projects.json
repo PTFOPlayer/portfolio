@@ -3,19 +3,23 @@
         {
             "title":"msr_server",
             "tools":["shell", "c++"],
-            "link": "google.com"
+            "link": "https://github.com/PTFOPlayer/msr_server"
         },
         {
             "title":"hwi_rs",
-            "tools":["rust", "shell"]
+            "tools":["rust", "shell"],
+            "link":"https://github.com/PTFOPlayer/hwi_rs"
         },
         {
             "title":"screenpad_rs",
-            "tools":["rust", "shell"]
+            "tools":["rust", "shell"],
+            "link":"https://github.com/PTFOPlayer/screenpad_rs"
         },
         {
             "title":"euclides",
-            "tools":["rust"]
+            "tools":["rust"],
+            "link":"https://github.com/PTFOPlayer/euclides"
+
         },
         {
             "title":"Discord-Programmers-Bot",
