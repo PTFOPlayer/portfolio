@@ -6,7 +6,11 @@
     justify-content: center;
     align-items: center ;
     flex-direction: column;
-    background: url('../../assets/github.png') no-repeat fixed;
+    .img {
+        height: 25vh;
+        width: 100vw;
+        background: url("../../assets/github.png") fixed no-repeat;
+    }
     div {
         display: flex;
         justify-content: center;
