@@ -8,6 +8,7 @@ export default function PostsList() {
   return (
     <div className="post_list" >
       <h2> Projects List</h2>
+      <div className="img"></div>
       <div>
         {titles.map((e, key) => (
           <p key={key}>{e}</p>
