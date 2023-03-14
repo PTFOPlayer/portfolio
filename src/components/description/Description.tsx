@@ -11,6 +11,7 @@ export default function Description() {
   return (
     <div className="description">
       <h1> Hi, I'm Patryk </h1>
+      <img src="https://avatars.githubusercontent.com/u/35374730?v=4" alt=""/>
       <p> I'm
         <span className="dev"> full-stack </span>
         developer from Poland.

@@ -6,7 +6,7 @@ export default function PostsList() {
   let data = projects_data.projects
   let titles = data.map(e => e.title)
   return (
-    <div className="post_list">
+    <div className="post_list" >
       <h2> Projects List</h2>
       <div>
         {titles.map((e, key) => (

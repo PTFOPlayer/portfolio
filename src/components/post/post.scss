@@ -3,33 +3,52 @@
     background-color: #1a1d22;
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 2vh;
     padding-bottom: 5vh;
     img {
         margin: 1vw;
-        width: 10vw;
-        height: 10vw;   
+        border-radius: 50%;   
+        width: 32vw;
+        height: 32vw;
+
+        @media (min-width:1025px){
+            width: 12vw;
+            height: 12vw;
+        }
+    }
+
+    @media (min-width:1025px){
+        flex-direction: row;
     }
 }
 
 .content {
     .titleBar {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        @media (min-width:1025px){
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
     }
     width: 75vw;
     ul {
         list-style: none;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        @media (min-width:1025px) {
+            justify-content: space-between;
+        }
         align-items: center;
     }
     li {
         list-style: none;
-        margin-left: 1vw;
+        margin-left: 3vw;
+        @media (min-width:1025px){ margin-left: 1vw;}
     }
 }
 
