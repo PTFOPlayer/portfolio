@@ -22,9 +22,9 @@ export default function Post(element: any) {
     <>
         <div className="post" >
           {element.image ? 
-            <motion.img src={element.img} alt="img not found" 
+            <motion.img src={element.img} alt="img not found" loading="lazy" 
             ref={ref} variants={variants} initial="hidden" animate={control}/> :
-            <motion.img src="https://avatars.githubusercontent.com/u/35374730?v=4" alt="img not found" 
+            <motion.img src="https://avatars.githubusercontent.com/u/35374730?v=4" alt="img not found" loading="lazy"
             ref={ref} variants={variants} initial="hidden" animate={control}/>
           }
           <div className="content">
