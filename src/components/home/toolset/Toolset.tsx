@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./toolset.scss"
-import data from "../../assets/toolset.json"
+import data from "../../../assets/toolset.json"
 import Tool from "../tool/Tool";
 
 export default function Toolset() {

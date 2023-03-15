@@ -1,7 +1,7 @@
 import * as React from "react";
-import projects_data from "../../assets/projects.json"
+import projects_data from "../../../assets/projects.json"
 import "./posts.scss"
-import "../../assets/langs.scss"
+import "../../../assets/langs.scss"
 import Post from "../post/Post";
 
 export default function Posts() {

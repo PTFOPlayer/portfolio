@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React from "react"
-import toolsColor from "../../scripts/toolsColor"
+import toolsColor from "../../../scripts/toolsColor"
 import "./post.scss"
 export default function Post(element: any) {
   const control = useAnimation()

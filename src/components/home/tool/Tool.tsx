@@ -1,5 +1,5 @@
 import React from "react";
-import toolsColor from "../../scripts/toolsColor";
+import toolsColor from "../../../scripts/toolsColor";
 import "./tool.scss"
 
 import { motion, useAnimation } from "framer-motion";

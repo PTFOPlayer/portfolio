@@ -13,10 +13,12 @@ export default function Topbar() {
           <ul className="top-list">
             <li className="top-list-item"><a href='/portfolio' className="inherit">Home</a></li>
             <li className="top-list-item"><a href='/portfolio/#/projects' className="inherit">Projects</a></li>
-            <li className="top-list-item"><a href='/portfolio' className="inherit">Contacts</a></li>
+            <li className="top-list-item"><a href='/portfolio/#/contact' className="inherit">Contact</a></li>
           </ul>
         </div>
-        <div className="top-right" />
+        <div className="top-right">
+          <a className="top-list-item" href="https://ptfoplayer.github.io/technews/#/">Technews</a>
+        </div>
       </div>
     </div>
   );

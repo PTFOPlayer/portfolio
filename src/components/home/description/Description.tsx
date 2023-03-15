@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./description.scss"
-import "../../assets/langs.scss"
+import "../../../assets/langs.scss"
 
 export default function Description() {
   const [isReactSpinning, setReactSpin] = React.useState(false);
