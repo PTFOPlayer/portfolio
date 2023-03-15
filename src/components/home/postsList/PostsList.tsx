@@ -1,5 +1,5 @@
 import React from "react";
-import projects_data from "../../assets/projects.json"
+import projects_data from "../../../assets/projects.json"
 import "./postslist.scss"
 
 export default function PostsList() {
