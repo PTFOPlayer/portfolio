@@ -9,7 +9,11 @@
     .img {
         height: 25vh;
         width: 100vw;
-        background: url("../../../assets/github.png") fixed no-repeat;
+        background: url("../../../assets/github.png") fixed no-repeat center;
+        background-position-x:calc( -80vw);
+        @media (min-width: 1025px) {
+            background-position-x: 0;
+        }
     }
     div {
         display: flex;
