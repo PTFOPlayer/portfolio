@@ -13,6 +13,8 @@ class toolColor {
           return <p className="mongodb"><i className="fas fa-database" /> MongoDB</p> 
         case "c++":
           return <p className="cpp"> C++ </p>
+        case "c":
+          return <p className="c"> C </p>
         case "shell":
           return <p className="shell"><i className="fa-solid fa-terminal" /> Shell </p>
         case "docker":
