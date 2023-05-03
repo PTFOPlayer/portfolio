@@ -1,3 +1,3 @@
 Website no longer hosted on github pages
 
-http://patryk.tofil.pl
+http://patryk.tofil.eu
