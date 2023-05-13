@@ -12,7 +12,7 @@
     p {
         width: 75vw;
     }
-    ul {
+    .lang_list {
         width: 75vw;
         list-style: none;
         display: flex;
@@ -36,5 +36,37 @@
         width: 75vw;
         font-size: 3vh;
         text-align: start;
+    }
+
+    a {
+        text-decoration: none;
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+    }
+}
+
+.courses_list {
+    display: flex;
+    flex-direction: row;
+    li {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 10px;
+        @media (min-width:1025px){
+            margin-right: 20px;
+            margin-left: 0px;
+            margin-top:0px;
+        }
+        font-size: 30px;
+        font-weight: 300;
+        cursor: pointer;
+        border: 1px solid #fff;
+        color: #fff;
+        border-radius: 8px;
+        padding: 5px;
+    }
+    li:hover {
+        background-color: rgba(131, 131, 131, 0.5);
     }
 }
