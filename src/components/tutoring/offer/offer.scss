@@ -1,0 +1,35 @@
+.lang_list {
+    width: 75vw;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+
+    @media (min-width:1025px) {
+        justify-content: left;
+    }
+
+    align-items: center;
+
+    li {
+        list-style: none;
+        margin-left: 3vw;
+
+        @media (min-width:1025px) {
+            margin-left: 1vw;
+        }
+
+        p {
+            margin-top: 0;
+            text-align: start;
+        }
+    }
+
+    h3 {
+        width: 75vw;
+        font-size: 3vh;
+        text-align: start;
+    }
+
+
+}

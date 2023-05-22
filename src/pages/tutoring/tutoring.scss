@@ -9,55 +9,28 @@
     justify-content: center;
     align-items: center;
     height: auto;
+
     p {
         width: 75vw;
-    }
-    .lang_list {
-        width: 75vw;
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        @media (min-width:1025px) {
-            justify-content: left;
-        }
-        align-items: center;
-    }
-    li {
-        list-style: none;
-        margin-left: 3vw;
-        @media (min-width:1025px){ margin-left: 1vw;}
-        p {
-            margin-top: 0;
-            text-align: start;
-        }
-    }
-    h3 {
-        width: 75vw;
-        font-size: 3vh;
-        text-align: start;
-    }
-
-    a {
-        text-decoration: none;
-        font-size: inherit;
-        font-weight: inherit;
-        color: inherit;
     }
 }
 
 .courses_list {
     display: flex;
     flex-direction: row;
+
     li {
+        list-style: none;
         margin-left: 8px;
         margin-right: 8px;
         margin-top: 10px;
-        @media (min-width:1025px){
+
+        @media (min-width:1025px) {
             margin-right: 20px;
             margin-left: 0px;
-            margin-top:0px;
+            margin-top: 0px;
         }
+
         font-size: 30px;
         font-weight: 300;
         cursor: pointer;
@@ -66,7 +39,16 @@
         border-radius: 8px;
         padding: 5px;
     }
+
     li:hover {
         background-color: rgba(131, 131, 131, 0.5);
+    }
+
+
+    a {
+        text-decoration: none;
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
     }
 }
