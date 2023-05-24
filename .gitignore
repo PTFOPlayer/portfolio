@@ -24,3 +24,4 @@ yarn-error.log*
 
 #backend
 /backend/node_modules
+/backend/data.json
