@@ -10,7 +10,7 @@ const port = 2223
 
 app.use(express.json())
 
-app.get('/api', (_req: any, res: { send: (arg0: string) => any; }) => res.send("hellooo (^u^)"));
+app.get('/api', (_req: any, res: { send: (arg0: string) => void; }) => res.send("hellooo (^u^)"));
 
 app.post('/api/post/', async (req, res) => {
     let request: post_request = req.body;
