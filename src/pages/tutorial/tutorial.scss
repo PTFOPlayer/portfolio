@@ -1,0 +1,16 @@
+.tutorial {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1d22;
+    width: 100vw;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+
+    p {
+        width: 75vw;
+    }
+}

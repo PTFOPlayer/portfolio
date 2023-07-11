@@ -1,15 +1,17 @@
-import * as sql from 'mysql'
+import * as sql from 'mysql';
 import express from 'express';
-import data from './data.json'
+import data from './data.json';
+import cors from 'cors';
 
 import { L2cache, PersistantCache } from './cache/cache';
 import { content, content_request, post_request, settings_interface } from './interfaces/interfaces';
 const settings = data as settings_interface;
 
-const app = express()
-const port = 2223
+const app = express();
+const port = 2223;
 
 app.use(express.json())
+app.use(cors());
 
 app.get('/api', (_req: any, res: { send: (arg0: string) => void; }) => res.send("hellooo (^u^)"));
 
@@ -37,6 +39,7 @@ app.post('/api/post/', async (req, res) => {
                 res.send("successfully inserted (^~^)");
             }
         });
+        
     }
 });
 
@@ -72,7 +75,7 @@ app.post('/api/post/content', async (req, res) => {
             res.send("successfully inserted (^~^)");
         }
 
-
+        
     }
 })
 
@@ -98,17 +101,21 @@ app.get('/api/list', async (req, res) => {
                 res.send(JSON.stringify(data));
             }
         });
+
+        
     } else {
         ListCache.get() ? res.send(ListCache.get()) : res.status(500).send("cache error");
+        
         await connection.connect();
         connection.query(query, (err, result, _fields) => {
             if (err) {
-                res.send(err);
+                console.log(err);
             } else {
                 ListCache.set(JSON.stringify(result));
             }
         })
 
+        
     }
 })
 
@@ -141,12 +148,13 @@ app.get('/api/post_content/:name', async (req, res) => {
         await connection.connect();
         connection.query(query, (err, result, _fields) => {
             if (err) {
-                res.send(err);
+                console.log(err);
             } else {
                 PerPostCache.set(name, result);
             }
         });
     }
+    
 
 })
 

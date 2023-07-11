@@ -1,32 +1,32 @@
 import React from "react";
-
-export function Title(props: { title: string }) {
+import './tutorial.scss';
+export function Title(props: { children: string }) {
   return (
-      <h1>{props.title}</h1>
+      <h1 className="tutorialh1">{props.children}</h1>
   )
 }
 
-export function HeadlineBig(props: { headline: string }) {
+export function HeadlineBig(props: { children: string }) {
   return (
-      <h2>{props.headline}</h2>
+      <h2 className="tutorialh2">{props.children}</h2>
   )
 }
 
-export function HeadlineSmall(props: { headline: string }) {
+export function HeadlineSmall(props: { children: string }) {
   return (
-    <h3>{props.headline}</h3>
+    <h3 className="tutorialh3">{props.children}</h3>
   )
 }
 
-export function Paragraph(props: { paragraph: string }) {
+export function Paragraph(props: { children: string }) {
   return (
-      <p>{props.paragraph}</p>
+      <p className="tutorialp">{props.children}</p>
   )
 }
 
-export function Note(props: { note: string }) {
+export function Note(props: { children: string }) {
   return (
-    <p>{props.note}</p>
+    <p className="tutorialnote">{props.children}</p>
   ) 
 }
 
