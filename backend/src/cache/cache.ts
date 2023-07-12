@@ -1,12 +1,15 @@
-export class cache {
+export class Cache {
     data: string | null;
     lifetime;
     constructor(lifetime_minutes?: number) {
+        let lifetime = lifetime_minutes ? lifetime_minutes * 60 * 1000 : 1 * 60 * 1000
+
         this.data = null;
+
         this.lifetime = new Promise(() => {
             setTimeout(() => {
                 this.data = null;
-            }, lifetime_minutes ? lifetime_minutes * 60 * 1000 : 1 * 60 * 1000)
+            }, lifetime)
         });
     }
 
@@ -17,5 +20,53 @@ export class cache {
 
     get() {
         return this.data;
+    }
+}
+
+export class PersistantCache {
+    data: string | null;
+    constructor() {
+        this.data = null;
+    }
+
+    set(data: string) {
+        this.data = data;
+    }
+
+    get() {
+        return this.data;
+    }
+}
+
+export class L2cache {
+    data: Map<string, {
+        lifetime: any,
+        data: string
+    }>;
+
+    lifetime: (arg0: string) => Promise<void>;
+
+    constructor(lifetime_minutes?: number) {
+        let lifetime = lifetime_minutes ? lifetime_minutes * 60 * 1000 : 1 * 60 * 1000;
+
+        this.data = new Map();
+
+        this.lifetime = (key: string) => new Promise(() => {
+            setTimeout(() => {
+                this.data.delete(key);
+            }, lifetime);
+        });
+    }
+
+    set(key: string, value: string) {
+        let entry = {
+            lifetime: this.lifetime(key),
+            data: value
+        };
+        this.data.set(key, entry);
+    }
+
+    get(key: string) {
+        return this.data.get(key)?.data;
     }
 }
