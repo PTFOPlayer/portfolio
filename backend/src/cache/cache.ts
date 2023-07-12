@@ -1,6 +1,6 @@
 export class Cache {
     data: string | null;
-    lifetime;
+    lifetime: Promise<void>;
     constructor(lifetime_minutes?: number) {
         let lifetime = lifetime_minutes ? lifetime_minutes * 60 * 1000 : 1 * 60 * 1000
 
@@ -40,7 +40,7 @@ export class PersistantCache {
 
 export class L2cache {
     data: Map<string, {
-        lifetime: any,
+        lifetime: Promise<void>,
         data: string
     }>;
 
