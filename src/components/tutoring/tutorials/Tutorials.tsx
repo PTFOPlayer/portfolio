@@ -1,5 +1,5 @@
 import React from "react"
-export default function Tutorials() {
+export default function TutorialsComponent() {
   return (
     <>
       <h1>Only in polish!</h1>

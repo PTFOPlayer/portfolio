@@ -1,3 +1,7 @@
+:root {
+    --fontsize_topbar: 30px;
+}
+
 .top{
     width: 100vw;
     background-color: #282c34;
@@ -9,7 +13,7 @@
     flex-direction: column;
     height: fit-content;
     @media (min-width:1025px){
-        height: 60px;
+        height: 75px;
         flex-direction: row;
     }
     .top-left, .top-right{
@@ -22,8 +26,9 @@
     .top-center{
         flex: 70;
     }
+
     i {
-        font-size: 20px;
+        font-size: var(--fontsize_topbar);
         margin-top: 10px;
         @media (min-width:1025px){
             margin-right: 10px;
@@ -31,11 +36,9 @@
         }
         color : #fff;
         background: rgba(255,255,255,.1);
-        width: 30px;
-        height: 30px;
         cursor: pointer;
         border-radius: 50%;
-        padding: 5px;
+        padding: 10px;
         justify-content: center;
         align-items: center;
         display: flex;
@@ -48,6 +51,10 @@
         font-size: inherit;
         font-weight: inherit;
         color: inherit;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -68,7 +75,7 @@
             margin-left: 0px;
             margin-top:0px;
         }
-        font-size: 20px;
+        font-size: var(--fontsize_topbar);
         font-weight: 300;
         cursor: pointer;
         border: 1px solid #fff;
@@ -88,6 +95,6 @@
     justify-content: center;
     align-items: center;
     img {
-        height: 40px;
+        height: calc(var(--fontsize_topbar) * 1.5);
     }
 }
