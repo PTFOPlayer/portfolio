@@ -41,7 +41,7 @@ export class PersistantCache {
 export class L2cache {
     data: Map<string, {
         lifetime: Promise<void>,
-        data: string
+        data: any
     }>;
 
     lifetime: (arg0: string) => Promise<void>;
@@ -58,7 +58,7 @@ export class L2cache {
         });
     }
 
-    set(key: string, value: string) {
+    set(key: string, value: any) {
         let entry = {
             lifetime: this.lifetime(key),
             data: value
