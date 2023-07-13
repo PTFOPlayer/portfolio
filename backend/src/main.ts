@@ -1,6 +1,7 @@
 import * as sql from 'mysql'
 import express from 'express';
 import data from './data.json'
+
 import { L2cache, PersistantCache } from './cache/cache';
 import { content, content_request, post_request, settings_interface } from './interfaces/interfaces';
 const settings = data as settings_interface;
@@ -92,9 +93,9 @@ app.get('/api/list', async (req, res) => {
             if (err) {
                 res.send(err);
             } else {
-                let data = result as string;
+                let data = result;
                 ListCache.set(data);
-                res.send(data);
+                res.send(JSON.stringify(data));
             }
         });
     } else {
@@ -131,9 +132,8 @@ app.get('/api/post_content/:name', async (req, res) => {
             if (err) {
                 res.send(err);
             } else {
-                let data = result as string;
-                PerPostCache.set(name, data);
-                res.send(data);
+                PerPostCache.set(name, result);
+                res.send(JSON.stringify(data));
             }
         });
     } else {
@@ -143,7 +143,7 @@ app.get('/api/post_content/:name', async (req, res) => {
             if (err) {
                 res.send(err);
             } else {
-                PerPostCache.set(name, JSON.stringify(result));
+                PerPostCache.set(name, result);
             }
         });
     }
