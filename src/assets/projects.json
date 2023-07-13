@@ -25,6 +25,12 @@
             "link":"https://github.com/PTFOPlayer/euclides"
         },
         {
+            "title":"matrix",
+            "tools":["rust"],
+            "description":"Rust crate implementing matrices and methods and functions corelated to them. Matrices are generic with restriction to only numeric types.",
+            "link":"https://github.com/PTFOPlayer/matrix"
+        },
+        {
             "title":"Discord-Programmers-Bot",
             "tools":["rust", "shell", "docker", "mongodb"],
             "description": "Discord bot that allows to remotly execude programs and returns results of them via discord. It helps me to tutor some younger programmers and show them easly how some algorithms work. Currently I have no budget to host it continously and is hosted only on request",

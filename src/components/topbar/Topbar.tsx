@@ -19,7 +19,7 @@ export default function Topbar() {
             <li className="top-list-item"><a href='/' className="inherit">Home</a></li>
             <li className="top-list-item"><a href='/#/projects' className="inherit">Projects</a></li>
             <li className="top-list-item"><a href='/#/contact' className="inherit">Contact</a></li>
-            <li className="top-list-item"><a href='/#/tutoring' className="inherit">Tutoring</a></li>
+            <li className="top-list-item"><a href='/#/tutorials' className="inherit">Tutorials</a></li>
             <UserAgent mobile>
               <li className="top-list-item"><a className="top-list-item" href="https://ptfoplayer.github.io/technews/#/">Technews</a></li>
             </UserAgent>
