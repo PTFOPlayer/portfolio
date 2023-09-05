@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Paragraph, Title } from '../../components/tutorial/Tutorial';
+import { Paragraph, Title, Note, CodeBlock } from '../../components/tutorial/Tutorial';
 
 import './tutorial.scss';
 
@@ -19,6 +19,10 @@ function resolver(element: Element) {
       return (<Paragraph>{element.text}</Paragraph>)
     case "title":
       return (<Title>{element.text}</Title>)
+    case "note":
+      return (<Note>{element.text}</Note>)
+    case "codeblock":
+      return (<CodeBlock>{element.text}</CodeBlock>)
     default:
       return null
 
@@ -49,7 +53,7 @@ export default function Tutorial() {
   return (
     <div className="tutorial">
       {
-        data ? data.map((element, key) => <div key={key}>{resolver(element)}</div>) : null
+        data ? data.map((element, key) => <div className="content" key={key}>{resolver(element)}</div>) : null
       }
     </div>
   )

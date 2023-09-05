@@ -2,3 +2,17 @@
     font-size: 2.5vh;
     color: white;
 }
+
+.tutorialnote {
+    font-size: 1.8vh;
+    color: rgb(185, 179, 179);
+}
+
+.codeblock {
+    text-decoration: none !important;
+    .code {
+        background-color: #282C34;
+        padding: 1vh;
+        border: 0.1vh rgb(77, 75, 75) solid;
+    }
+}
