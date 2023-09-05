@@ -1,11 +1,11 @@
 import * as sql from 'mysql';
 import express from 'express';
-import data from './data.json';
+import settings_json from './data.json';
 import cors from 'cors';
 
 import { L2cache, PersistantCache } from './cache/cache';
 import { content, content_request, post_request, settings_interface } from './interfaces/interfaces';
-const settings = data as settings_interface;
+const settings = settings_json as settings_interface;
 
 const app = express();
 const port = 2223;
@@ -39,7 +39,8 @@ app.post('/api/post/', async (req, res) => {
                 res.send("successfully inserted (^~^)");
             }
         });
-        
+
+        connection.end();
     }
 });
 
@@ -75,8 +76,10 @@ app.post('/api/post/content', async (req, res) => {
             res.send("successfully inserted (^~^)");
         }
 
-        
+        connection.end();
     }
+
+
 })
 
 let ListCache = new PersistantCache();
@@ -102,10 +105,10 @@ app.get('/api/list', async (req, res) => {
             }
         });
 
-        
+
     } else {
         ListCache.get() ? res.send(ListCache.get()) : res.status(500).send("cache error");
-        
+
         await connection.connect();
         connection.query(query, (err, result, _fields) => {
             if (err) {
@@ -115,8 +118,11 @@ app.get('/api/list', async (req, res) => {
             }
         })
 
-        
+
     }
+
+
+    connection.end();
 })
 
 const PerPostCache = new L2cache(180);
@@ -140,7 +146,7 @@ app.get('/api/post_content/:name', async (req, res) => {
                 res.send(err);
             } else {
                 PerPostCache.set(name, result);
-                res.send(JSON.stringify(data));
+                res.send(JSON.stringify(result));
             }
         });
     } else {
@@ -154,8 +160,8 @@ app.get('/api/post_content/:name', async (req, res) => {
             }
         });
     }
-    
 
+    connection.end();
 })
 
 app.listen(port, () => { console.log(`Server listening on port ${port}!`) });
