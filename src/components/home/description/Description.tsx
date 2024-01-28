@@ -63,8 +63,8 @@ export default function Description() {
         </p>.
         <br /> <br />
         I'm using
-        <p className="manjaro">
-          Manjaro
+        <p className="fedora">
+          Fedora
         </p>
         as my main operating system and I generaly prefer
         <p className="linux"
