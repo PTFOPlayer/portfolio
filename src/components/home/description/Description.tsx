@@ -29,7 +29,7 @@ export default function Description() {
         and
         <p className="sass">
           <i className="fab fa-sass" />
-          Sass
+          Scss
         </p>
         to make frontend, for database I prefer
         <p className="mongodb">
