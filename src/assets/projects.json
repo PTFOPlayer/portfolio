@@ -1,46 +1,58 @@
 {
-    "projects": [
-        {
-            "title":"msr_server",
-            "tools":["shell", "c++"],
-            "description": "Exposes cpu statistics (and in future memory) to single file that is updated multiple times per second. It can be used to make some hardware monitorig software. MSR stands for Modular Statisci Reader",
-            "link": "https://github.com/PTFOPlayer/msr_server"
-        },
-        {
-            "title":"hwi_rs",
-            "tools":["rust", "shell"],
-            "description":"Hwi_rs was created to give linux gamers and pc enthusiasts some solution for monitoring their hardware (and in future overclocking). It works together with msr_server projects but you don't have to install it separatly because installer for hwi_rs takes care of it automaticly. Currently support for AMD gpu and Intel IGP is limmited and support for Intel ARC doesn't exist, in future it should support every GPU architekture.",
-            "link":"https://github.com/PTFOPlayer/hwi_rs"
-        },
-        {
-            "title":"screenpad_rs",
-            "tools":["rust", "shell"],
-            "description":"Wrapper to Plippo's asus-wmi-screenpad. Screenpad_rs allows user to automaticaly sync brightness for asus screenpad with brightness of main screen, turn it off and on, and set static brightness. In also supports screens in Asus pro duo, however it is currently not tested enougth.",
-            "link":"https://github.com/PTFOPlayer/screenpad_rs"
-        },
-        {
-            "title":"euclides",
-            "tools":["rust"],
-            "description":"Rust crate implementing euclides algorithm for GCD and LCM. Currently works for i32, i64 and i128, so all three most used types of integer in Rust programming language. It can be downloaded via cargo.",
-            "link":"https://github.com/PTFOPlayer/euclides"
-        },
-        {
-            "title":"matrix",
-            "tools":["rust"],
-            "description":"Rust crate implementing matrices and methods and functions corelated to them. Matrices are generic with restriction to only numeric types.",
-            "link":"https://github.com/PTFOPlayer/matrix"
-        },
-        {
-            "title":"Discord-Programmers-Bot",
-            "tools":["rust", "shell", "docker", "mongodb"],
-            "description": "Discord bot that allows to remotly execude programs and returns results of them via discord. It helps me to tutor some younger programmers and show them easly how some algorithms work. Currently I have no budget to host it continously and is hosted only on request",
-            "link":"https://github.com/PTFOPlayer/Discod-Programmers_Bot"
-        },
-        {
-            "title":"Technews",
-            "tools":["javascript", "react", "css"],
-            "description":"My own newspaper on topic of leaks about future pc hardware from different brands, currenlty i took break in writing there caused by lack of free time but I am planning to return to writing.",
-            "link":"https://ptfoplayer.github.io/technews/#/"
-        }
-    ]
+  "projects": [
+    {
+      "title": "msr_server",
+      "tools": ["rust"],
+      "description": "Exposes cpu statistics (and in future memory) to single file that is updated multiple times per second. It can be used to make some hardware monitorig software. MSR stands for Modular Statistics Reader",
+      "link": "https://github.com/PTFOPlayer/msr_server"
+    },
+    {
+      "title": "hwi_rs",
+      "tools": ["rust", "shell"],
+      "description": "Hwi_rs was created to give linux gamers and pc enthusiasts some solution for monitoring their hardware (and in future overclocking). It works together with msr_server projects but you don't have to install it separatly because installer for hwi_rs takes care of it automaticly. Currently support for AMD gpu and Intel IGP is limmited and support for Intel ARC doesn't exist, in future it should support every GPU architekture.",
+      "link": "https://github.com/PTFOPlayer/hwi_rs"
+    },
+    {
+      "title": "numberpad_rs",
+      "tools": ["rust", "shell"],
+      "description": "User space driver for asus numberpad. It allows user to turn on and off numberpad embeedded into touchpad in some asus laptops. It was currently tested only on UX5401.",
+      "link": "https://github.com/PTFOPlayer/numberpad_rs"
+    },
+    {
+      "title": "screenpad_rs",
+      "tools": ["rust", "shell"],
+      "description": "Wrapper to Plippo's asus-wmi-screenpad. Screenpad_rs allows user to automaticaly sync brightness for asus screenpad with brightness of main screen, turn it off and on, and set static brightness. In also supports screens in Asus pro duo, however it is currently not tested enougth.",
+      "link": "https://github.com/PTFOPlayer/screenpad_rs"
+    },
+    {
+      "title": "euclides",
+      "tools": ["rust"],
+      "description": "Rust crate implementing euclides algorithm for GCD and LCM. Currently works for i32, i64 and i128, so all three most used types of integer in Rust programming language. It can be downloaded via cargo.",
+      "link": "https://github.com/PTFOPlayer/euclides"
+    },
+    {
+      "title": "matrix",
+      "tools": ["rust"],
+      "description": "Rust crate implementing matrices and methods and functions corelated to them. Matrices are generic with restriction to only numeric types.",
+      "link": "https://github.com/PTFOPlayer/matrix"
+    },
+    {
+      "title": "Discord-Programmers-Bot",
+      "tools": ["rust", "shell", "docker", "mongodb"],
+      "description": "Discord bot that allows to remotly execude programs and returns results of them via discord. It helps me to tutor some younger programmers and show them easly how some algorithms work. Currently I have no budget to host it continously and is hosted only on request",
+      "link": "https://github.com/PTFOPlayer/Discod-Programmers_Bot"
+    },
+    {
+      "title": "Portfolio",
+      "tools": ["typescript", "react", "scss"],
+      "description": "Hey you are here.",
+      "link": "http://patryk.tofil.eu"
+    },
+    {
+      "title": "Technews",
+      "tools": ["javascript", "react", "css"],
+      "description": "My own newspaper on topic of leaks about future pc hardware from different brands, currenlty i took break in writing there caused by lack of free time but I am planning to return to writing.",
+      "link": "https://ptfoplayer.github.io/technews/#/"
+    }
+  ]
 }

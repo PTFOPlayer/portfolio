@@ -1,6 +1,6 @@
 import React from "react";
 
-class toolColor {
+export default class toolColor {
   public static tool(tool: String) {
 
     tool = tool.toLowerCase()
@@ -11,6 +11,8 @@ class toolColor {
           return <p className="rust"><i className='fab fa-rust' /> Rust </p>
         case "mongodb": 
           return <p className="mongodb"><i className="fas fa-database" /> MongoDB</p> 
+        case "mysql":
+          return <p className="mysql"><i className="fas fa-database" /> MySql </p>
         case "c++":
           return <p className="cpp"> C++ </p>
         case "c":
@@ -51,5 +53,3 @@ class toolColor {
     )
   }
 }
-
-export default toolColor;
