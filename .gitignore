@@ -26,5 +26,6 @@ yarn-error.log*
 /backend/node_modules
 /backend/src/data.json
 /backend/prod
+/backend/database*
 
 /src/pages/managment
