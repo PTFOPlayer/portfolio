@@ -3,7 +3,9 @@ import { useInView } from "react-intersection-observer";
 import React from "react";
 import toolsColor from "../../../scripts/toolsColor";
 import "./post.scss";
-export default function Post(element: any) {
+import { ElementData } from "../posts/Posts.d";
+
+export default function Post(element: ElementData) {
   const control = useAnimation();
   const [ref, inView] = useInView();
   const variants = {
@@ -18,30 +20,22 @@ export default function Post(element: any) {
       control.start("hidden");
     }
   }, [control, inView]);
+
+  let image = element.image
+    ? element.image
+    : "https://avatars.githubusercontent.com/u/35374730?v=4";
   return (
     <>
       <div className="post">
-        {element.image ? (
-          <motion.img
-            src={element.img}
-            alt="img not found"
-            loading="lazy"
-            ref={ref}
-            variants={variants}
-            initial="hidden"
-            animate={control}
-          />
-        ) : (
-          <motion.img
-            src="https://avatars.githubusercontent.com/u/35374730?v=4"
-            alt="img not found"
-            loading="lazy"
-            ref={ref}
-            variants={variants}
-            initial="hidden"
-            animate={control}
-          />
-        )}
+        <motion.img
+          src={image}
+          alt="img not found"
+          loading="lazy"
+          ref={ref}
+          variants={variants}
+          initial="hidden"
+          animate={control}
+        />
         <div className="content">
           <div className="titleBar">
             {element.title ? <h1>{element.title}</h1> : null}
