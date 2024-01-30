@@ -1,7 +1,7 @@
-export interface settings_interface {
-    usr: string,
-    passwd: string,
-    access: string,
+export interface ServerSettings {
+    user: string,
+    password_db: string,
+    password: string,
     host: string,
     db: string,    
 }

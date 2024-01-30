@@ -8,9 +8,16 @@ import {
   content,
   content_request,
   post_request,
-  settings_interface,
+  ServerSettings,
 } from "./interfaces/interfaces";
-const settings = settings_json as settings_interface;
+import { NewPostRequest } from "./interfaces/new_post";
+const settings = settings_json as ServerSettings;
+const db_defaults = {
+  user: settings.user,
+  password: settings.password_db,
+  host: settings.host,
+  database: settings.db,
+};
 
 const app = express();
 const port = 2223;
@@ -18,166 +25,89 @@ const port = 2223;
 app.use(express.json());
 app.use(cors());
 
-app.get("/api", (_req: any, res: { send: (arg0: string) => void }) =>
-  res.send("hellooo (^u^)")
-);
+app.get("/api", (req, res) => res.send("hellooo (^u^)"));
 
-app.post("/api/post/", async (req, res) => {
-  let request: post_request = req.body;
-
-  if (request.passwd != settings.access) {
+app.post("/api/new_post", async (req, res) => {
+  let request: NewPostRequest = req.body;
+  if (request.password != settings.password || request.user != settings.user) {
     res.status(401).send("Wrong password");
-  } else {
-    let connection = await sql.createConnection({
-      user: settings.usr,
-      password: settings.passwd,
-      host: settings.host,
-      database: settings.db,
-    });
-
-    await connection.connect();
-
-    let date = new Date();
-    let query =
-      "INSERT INTO `posts`(`name`,`post_date`,`version`) VALUES ('" +
-      request.name +
-      "','" +
-      date +
-      "','" +
-      request.version +
-      "')";
-    connection.query(query, (err, _result, _fields) => {
-      if (err) {
-        res.status(500).send("error occured while inserting (ᴗ╭╮ᴗ)");
-      } else {
-        res.send("successfully inserted (^~^), " + _result);
-      }
-    });
-
-    connection.end();
+    return;
   }
-});
 
-app.post("/api/post/content", async (req, res) => {
-  let request: content_request = req.body;
+  let connection = await sql.createConnection(db_defaults);
 
-  if (request.passwd != settings.access) {
-    res.status(401).send("Wrong password");
-  } else {
-    let connection = await sql.createConnection({
-      user: settings.usr,
-      password: settings.passwd,
-      host: settings.host,
-      database: settings.db,
-    });
+  await connection.connect();
 
-    let data = request.data;
-    await connection.connect();
-    if (data.length === 0) {
-      res.status(500).send("error occured while inserting (ᴗ╭╮ᴗ)");
+  let date = new Date();
+
+  let query =
+    "INSERT INTO `post`(`post_short_name`,`post_full_name`,`post_data`) VALUES (?,?,?)";
+
+  connection.query(
+    query,
+    [request.post_full_name, request.post_full_name, date],
+    (err, result, _fields) => {
+      if (err) {
+        res.status(500).send("error occured while inserting (ᴗ╭╮ᴗ)" + err);
+      } else {
+        res.send("successfully inserted (^~^), " + JSON.stringify(result));
+      }
     }
-    data.map((e: content, index) => {
-      let query =
-        "INSERT INTO `content`(`name`,`element`,`type`,`text`) VALUES ('" +
-        e.name +
-        "','" +
-        index +
-        "','" +
-        e.type +
-        "','" +
-        e.text +
-        "')";
-
-      connection.query(query, (err, _result, _fields) => {
-        if (err) {
-          res.status(500).send("error occured while inserting (ᴗ╭╮ᴗ)" + _result + err);
-        } else {
-          res.send("successfully inserted (^~^)");
-        }
-      });
-    });
-
-    connection.end();
-  }
-});
-
-let ListCache = new PersistantCache();
-
-app.get("/api/list", async (req, res) => {
-  const query = "SELECT `id`, `name` FROM `posts`";
-  let connection = await sql.createConnection({
-    user: settings.usr,
-    password: settings.passwd,
-    host: settings.host,
-    database: settings.db,
-  });
-
-  if (ListCache.get() == null) {
-    await connection.connect();
-    connection.query(query, (err, result, _fields) => {
-      if (err) {
-        res.send(err);
-      } else {
-        let data = result;
-        ListCache.set(data);
-        res.send(JSON.stringify(data));
-      }
-    });
-  } else {
-    ListCache.get()
-      ? res.send(ListCache.get())
-      : res.status(500).send("cache error");
-
-    await connection.connect();
-    connection.query(query, (err, result, _fields) => {
-      if (err) {
-        console.log(err);
-      } else {
-        ListCache.set(JSON.stringify(result));
-      }
-    });
-  }
+  );
 
   connection.end();
 });
 
-const PerPostCache = new L2cache(180);
+app.get("/api/get_posts_short", async (_req, res) => {
+  let connection = await sql.createConnection(db_defaults);
 
-app.get("/api/post_content/:name", async (req, res) => {
-  let name = req.params.name;
+  await connection.connect();
 
-  let connection = await sql.createConnection({
-    user: settings.usr,
-    password: settings.passwd,
-    host: settings.host,
-    database: settings.db,
+  let query = "SELECT post_id, post_short_name FROM post";
+  connection.query(query, (err, result, _fields) => {
+    if (err) {
+      res.status(500).send("error occured while pulling (ᴗ╭╮ᴗ)" + err);
+    } else {
+      res.send(JSON.stringify(result));
+    }
   });
 
-  const query = 'SELECT * FROM `content` WHERE `name` = "' + name + '"';
+  connection.end();
+});
 
-  if (PerPostCache.get(name) == undefined) {
-    await connection.connect();
-    connection.query(query, (err, result, _fields) => {
-      if (err) {
-        res.send(err);
-      } else {
-        PerPostCache.set(name, result);
-        res.send(JSON.stringify(result));
-      }
-    });
-  } else {
-    PerPostCache.get(name)
-      ? res.send(PerPostCache.get(name))
-      : res.status(500).send("cache error");
-    await connection.connect();
-    connection.query(query, (err, result, _fields) => {
-      if (err) {
-        console.log(err);
-      } else {
-        PerPostCache.set(name, result);
-      }
-    });
-  }
+app.get("/api/get_posts_full", async (_req, res) => {
+  let connection = await sql.createConnection(db_defaults);
+
+  await connection.connect();
+
+  let query = "SELECT * FROM post";
+  connection.query(query, (err, result, _fields) => {
+    if (err) {
+      res.status(500).send("error occured while pulling (ᴗ╭╮ᴗ)" + err);
+    } else {
+      res.send(JSON.stringify(result));
+    }
+  });
+
+  connection.end();
+});
+
+app.get("/api/get_post_by_id/:id", async (req, res) => {
+  let name = req.params.id;
+
+  let connection = await sql.createConnection(db_defaults);
+
+  await connection.connect();
+
+  let query =
+    "SELECT * FROM post LEFT JOIN post_content ON post.post_id = post_content.post_id WHERE post.post_id = ?";
+  connection.query(query, [name], (err, result, _fields) => {
+    if (err) {
+      res.status(500).send("error occured while pulling (ᴗ╭╮ᴗ)" + err);
+    } else {
+      res.send(JSON.stringify(result));
+    }
+  });
 
   connection.end();
 });
