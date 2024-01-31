@@ -2,6 +2,7 @@ import * as sql from "mysql";
 import express from "express";
 import settings_json from "./data.json";
 import cors from "cors";
+import filter from "./filter";
 
 import { L2cache, PersistantCache } from "./cache/cache";
 import {
@@ -41,11 +42,11 @@ app.post("/api/new_post", async (req, res) => {
   let date = new Date();
 
   let query =
-    "INSERT INTO `post`(`post_short_name`,`post_full_name`,`post_data`) VALUES (?,?,?)";
+    "INSERT INTO `post`(`post_id` `post_short_name`,`post_full_name`,`post_data`) VALUES (?,?,?,?)";
 
   connection.query(
     query,
-    [request.post_full_name, request.post_full_name, date],
+    [request.post_id, request.post_full_name, request.post_full_name, date],
     (err, result, _fields) => {
       if (err) {
         res.status(500).send("error occured while inserting (ᴗ╭╮ᴗ)" + err);
@@ -93,7 +94,7 @@ app.get("/api/get_posts_full", async (_req, res) => {
 });
 
 app.get("/api/get_post_by_id/:id", async (req, res) => {
-  let name = req.params.id;
+  let id = req.params.id;
 
   let connection = await sql.createConnection(db_defaults);
 
@@ -101,10 +102,52 @@ app.get("/api/get_post_by_id/:id", async (req, res) => {
 
   let query =
     "SELECT * FROM post LEFT JOIN post_content ON post.post_id = post_content.post_id WHERE post.post_id = ?";
-  connection.query(query, [name], (err, result, _fields) => {
+
+  connection.query(query, [id], (err, result, _fields) => {
     if (err) {
       res.status(500).send("error occured while pulling (ᴗ╭╮ᴗ)" + err);
     } else {
+      res.send(JSON.stringify(result));
+    }
+  });
+
+  connection.end();
+});
+
+app.get("/api/get_content_by_post_id/:id", async (req, res) => {
+  let id = req.params.id;
+
+  let connection = await sql.createConnection(db_defaults);
+
+  await connection.connect();
+
+  let query = `SELECT
+    post_content.post_content_id,
+    subtitle_content.subtitle_content_id,
+    subtitle_content.subtitle_data,
+    text_content.text_content_id,
+    text_content.text_data,
+    code_content.code_content_id,
+    code_content.code_language,
+    code_content.code_data,
+    blob_content.blob_content_id,
+    blob_content.blob_data
+FROM
+    post_content
+LEFT JOIN subtitle_content ON post_content.post_content_id = subtitle_content.post_content_id
+LEFT JOIN text_content ON post_content.post_content_id = text_content.post_content_id
+LEFT JOIN code_content ON post_content.post_content_id = code_content.post_content_id
+LEFT JOIN blob_content ON post_content.post_content_id = blob_content.post_content_id
+WHERE
+    post_id = ?
+ORDER BY
+    post_content.post_content_id;`;
+
+  connection.query(query, [id], (err, result, _fields) => {
+    if (err) {
+      res.status(500).send("error occured while pulling (ᴗ╭╮ᴗ)" + err);
+    } else {
+      filter(result);
       res.send(JSON.stringify(result));
     }
   });
