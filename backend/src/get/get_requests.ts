@@ -1,6 +1,6 @@
 import * as sql from "mysql";
 import express from "express";
-import { settings, db_defaults } from "../defaults";
+import { db_defaults } from "../defaults";
 import filter from "../filter";
 
 export let router = express.Router();
