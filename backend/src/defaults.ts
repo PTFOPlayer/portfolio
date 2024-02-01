@@ -15,4 +15,5 @@ export const db_defaults = {
   password: settings.password_db,
   host: settings.host,
   database: settings.db,
+  multipleStatements: true
 };
