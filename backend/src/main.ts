@@ -13,6 +13,9 @@ app.use("/", get_router);
 import { router as post_router } from "./post/post_requests";
 app.use("/", post_router);
 
+import { delete_router } from "./delete/delete_request";
+app.use("/", delete_router);
+
 app.get("/api", (req, res) => res.send("hellooo (^u^)"));
 
 app.listen(port, () => {
