@@ -4,7 +4,6 @@ export interface NewPostRequest {
   post_id: number;
   post_short_name: string;
   post_full_name: string;
-  post_data: string;
 }
 
 export interface BlobContent {

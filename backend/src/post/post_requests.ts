@@ -7,7 +7,7 @@ import {
   NewPostRequest,
   SubtitleContent,
   TextContent,
-} from "./new_post";
+} from "./post";
 import { db_defaults, settings } from "../defaults";
 
 export let router = express.Router();
@@ -26,7 +26,7 @@ router.post("/api/new_post", async (req, res) => {
   let date = new Date();
 
   let query =
-    "INSERT INTO `post`(`post_id` `post_short_name`,`post_full_name`,`post_data`) VALUES (?,?,?,?)";
+    "INSERT INTO `post`(`post_id`, `post_short_name`,`post_full_name`,`post_data`) VALUES (?,?,?,?)";
 
   connection.query(
     query,
