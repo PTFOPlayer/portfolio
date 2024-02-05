@@ -3,9 +3,9 @@ import express from "express";
 import { db_defaults } from "../defaults";
 import filter from "../filter";
 
-export let router = express.Router();
+export let get_router = express.Router();
 
-router.get("/api/get_posts_short", async (_req, res) => {
+get_router.get("/api/get_posts_short", async (_req, res) => {
   let connection = await sql.createConnection(db_defaults);
 
   await connection.connect();
@@ -22,7 +22,7 @@ router.get("/api/get_posts_short", async (_req, res) => {
   connection.end();
 });
 
-router.get("/api/get_posts_full", async (_req, res) => {
+get_router.get("/api/get_posts_full", async (_req, res) => {
   let connection = await sql.createConnection(db_defaults);
 
   await connection.connect();
@@ -39,7 +39,7 @@ router.get("/api/get_posts_full", async (_req, res) => {
   connection.end();
 });
 
-router.get("/api/get_post_by_id/:id", async (req, res) => {
+get_router.get("/api/get_post_by_id/:id", async (req, res) => {
   let id = req.params.id;
 
   let connection = await sql.createConnection(db_defaults);
@@ -60,7 +60,7 @@ router.get("/api/get_post_by_id/:id", async (req, res) => {
   connection.end();
 });
 
-router.get("/api/get_content_by_post_id/:id", async (req, res) => {
+get_router.get("/api/get_content_by_post_id/:id", async (req, res) => {
   let id = req.params.id;
 
   let connection = await sql.createConnection(db_defaults);
