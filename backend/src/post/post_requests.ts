@@ -10,9 +10,9 @@ import {
 } from "./post";
 import { db_defaults, settings } from "../defaults";
 
-export let router = express.Router();
+export let post_router = express.Router();
 
-router.post("/api/new_post", async (req, res) => {
+post_router.post("/api/new_post", async (req, res) => {
   let request: NewPostRequest = req.body;
   if (request.password != settings.password || request.user != settings.user) {
     res.status(401).send("Wrong password");
@@ -26,7 +26,7 @@ router.post("/api/new_post", async (req, res) => {
   let date = new Date();
 
   let query =
-    "INSERT INTO `post`(`post_id`, `post_short_name`,`post_full_name`,`post_data`) VALUES (?,?,?,?)";
+    "INSERT INTO `post`(`post_id`, `post_short_name`,`post_full_name`,`post_date`) VALUES (?,?,?,?)";
 
   connection.query(
     query,
@@ -43,7 +43,7 @@ router.post("/api/new_post", async (req, res) => {
   connection.end();
 });
 
-router.post("/api/new_text_content/", async (req, res) => {
+post_router.post("/api/new_text_content/", async (req, res) => {
   let request: ContentPostRequest<TextContent>;
 
   try {
@@ -88,7 +88,7 @@ router.post("/api/new_text_content/", async (req, res) => {
   connection.end();
 });
 
-router.post("/api/new_subtitle_content/", async (req, res) => {
+post_router.post("/api/new_subtitle_content/", async (req, res) => {
   let request: ContentPostRequest<SubtitleContent>;
 
   try {
@@ -133,7 +133,7 @@ router.post("/api/new_subtitle_content/", async (req, res) => {
   connection.end();
 });
 
-router.post("/api/new_blob_content/", async (req, res) => {
+post_router.post("/api/new_blob_content/", async (req, res) => {
   let request: ContentPostRequest<BlobContent>;
 
   try {
@@ -178,7 +178,7 @@ router.post("/api/new_blob_content/", async (req, res) => {
   connection.end();
 });
 
-router.post("/api/new_code_content/", async (req, res) => {
+post_router.post("/api/new_code_content/", async (req, res) => {
   let request: ContentPostRequest<CodeContent>;
 
   try {
