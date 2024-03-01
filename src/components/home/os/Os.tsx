@@ -54,25 +54,21 @@ export default function Os() {
       </div>
       <div className="osexp">
         <p>
-          To put it quickly, Linux is simply more stable. When developing an
-          app, stability is critical for me, and when my system randomly throws
-          a blue screen of death when an app crashes it is just not a good
-          system for developers. Okay, linux may have some problems like gpu
-          drivers issues (going deeper into that later) but it is still much
-          more stalbe than Windows. Windows instability has preaty simple root,
-          when you are developing something proprietary for something
-          proprietary you just can't make it work 100% stable. But with Linux,
-          when you make something open source or even proprietary you can make
-          it 100% stalbe.
+          To put it quickly, Linux is simply more stable. When developing
+          something, stability is critical for me, and when my system randomly
+          throws a blue screen it is just not a good development experiance.
+          Okay, linux may have some problems like gpu drivers issues or
+          proprietary hardware compatibility but it is still much more stalbe
+          than Windows.
         </p>
         <br />
         <p>
           Going deeper into OS choice, why <p className="fedora">Fedora</p>?
           Because I wanted something that had a high level of hardware
           compatibility and a large package repository. DNF has a lot of
-          packages available, is fast and Delta RPM saves some download time
-          when doing large updates. I ditched nvidia GPU's entierly so now I can
-          fully enjoy modern wayland compositors that Fedora offers by default.
+          packages available, is fast, and Delta RPM saves download time when
+          doing large updates. With fedora I can fully enjoy modern wayland
+          compositors that are included default.
         </p>
       </div>
     </>
