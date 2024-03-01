@@ -10,7 +10,7 @@
     },
     {
       "tool": ["Javascript", "Typescript", "React", "Scss"],
-      "description": "I group this four, because I use them mainly for front end. I prefere Typescript over Javascript, but i have projects written in both. When it comes to React, I choose it over angular because it was easier for me to use. Scss / Sass whas chosen by me because I already knew CSS but i wanted to have some more capabilities than that offered by plain CSS. "
+      "description": "I group this four together, because I use them mainly for front end. I prefere Typescript over Javascript, but i have projects written in both. When it comes to React, I choose it over angular because it was easier for me to use. Scss / Sass whas chosen by me because I already knew CSS but i wanted to have some more capabilities than that offered by plain CSS. "
     },
     {
       "tool": "Python",

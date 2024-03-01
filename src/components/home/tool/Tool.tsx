@@ -29,7 +29,7 @@ export default function Tool(e:any) {
         animate={control}>
         <div className="title">
           {typeof e.tool === "object" ? 
-          <h3>{toolsColor.tools(e.tool)}</h3> :
+          <h3><ul>{toolsColor.tools(e.tool)}</ul></h3> :
           <h1>{toolsColor.tool(e.tool)}</h1>}
         </div>
         {e.description ? <span>{e.description}</span> : null}

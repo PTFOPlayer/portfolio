@@ -1,10 +1,16 @@
 .App {
   text-align: center;
 }
+:root {
+
+  --element-bg: #141414;
+  --bar-bg: #282828;
+}
+
 
 .App-header {
   overflow: hidden;
-  background-color: #282c34;
+  background-color: var(--bar-bg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
