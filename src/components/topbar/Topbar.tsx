@@ -23,7 +23,7 @@ export default function Topbar() {
           <div className="top-center">
             <ul className="top-list">
               <li className="top-list-item">
-                <a href="/" className="inherit">
+                <a href="/#/" className="inherit">
                   Home
                 </a>
               </li>

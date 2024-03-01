@@ -2,7 +2,7 @@
   "projects": [
     {
       "title": "msr_server",
-      "tools": ["rust"],
+      "tools": ["rust", "shell"],
       "description": "Exposes cpu statistics (and in future memory) to single file that is updated multiple times per second. It can be used to make some hardware monitorig software. MSR stands for Modular Statistics Reader",
       "link": "https://github.com/PTFOPlayer/msr_server"
     },
