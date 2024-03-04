@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./career.scss";
-import data from "../../../assets/career.json";
+import data from "../../assets/career.json";
 
 export default function Career() {
   return (
