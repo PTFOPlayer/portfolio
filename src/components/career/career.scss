@@ -1,7 +1,7 @@
 .career {
   display: flex;
   flex-direction: column;
-  background-color: #1a1d22;
+  background-color: var(--element-bg);
   width: 100vw;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: center;
   height: auto;
-  margin-top: 5vh;
 
   p {
     text-align: center;
@@ -31,6 +30,7 @@
     justify-content: center;
   }
 }
+
 .careerexp {
   p {
     width: 75vw;
@@ -53,9 +53,8 @@
       h2 {
         display: flex;
         font-size: 3vh;
-        align-items:flex-start;
-        justify-content:left;
-
+        align-items: flex-start;
+        justify-content: left;
       }
 
       .date {
@@ -69,7 +68,7 @@
 
   display: flex;
   flex-direction: column;
-  background-color: #1a1d22;
+  background-color: var(--element-bg);
   width: 100vw;
   padding-top: 12px;
   padding-bottom: 12px;
