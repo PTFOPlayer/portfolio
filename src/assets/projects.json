@@ -1,6 +1,13 @@
 {
   "projects": [
     {
+      "title": "rocm_smi_lib",
+      "tools": ["rust", "C"],
+      "description": "Rust crate providing rocm_smi functionalities. Currently supports only device getters/queries. It can be used to make diagnostics applications and/or overclocking software for Radeon products",
+      "link": "https://github.com/PTFOPlayer/rocm_lib",
+      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/rocm_lib"
+    },
+    {
       "title": "msr_server",
       "tools": ["rust", "shell"],
       "description": "Exposes cpu statistics (and in future memory) to single file that is updated multiple times per second. It can be used to make some hardware monitorig software. MSR stands for Modular Statistics Reader",
@@ -16,13 +23,15 @@
       "title": "numberpad_rs",
       "tools": ["rust", "shell"],
       "description": "User space driver for asus numberpad. It allows user to turn on and off numberpad embeedded into touchpad in some asus laptops. It was currently tested only on UX5401.",
-      "link": "https://github.com/PTFOPlayer/numberpad_rs"
+      "link": "https://github.com/PTFOPlayer/numberpad_rs",
+      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/numberpad_rs"
     },
     {
       "title": "screenpad_rs",
       "tools": ["rust", "shell"],
       "description": "Wrapper to Plippo's asus-wmi-screenpad. Screenpad_rs allows user to automaticaly sync brightness for asus screenpad with brightness of main screen, turn it off and on, and set static brightness. In also supports screens in Asus pro duo, however it is currently not tested enougth.",
-      "link": "https://github.com/PTFOPlayer/screenpad_rs"
+      "link": "https://github.com/PTFOPlayer/screenpad_rs",
+      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/screenpad_rs"
     },
     {
       "title": "euclides",
@@ -46,13 +55,15 @@
       "title": "Portfolio",
       "tools": ["typescript", "react", "scss"],
       "description": "Hey you are here.",
-      "link": "http://patryk.tofil.eu"
+      "link": "http://patryk.tofil.eu",
+      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/portfolio"
     },
     {
       "title": "Technews",
       "tools": ["javascript", "react", "css"],
       "description": "My own newspaper on topic of leaks about future pc hardware from different brands, currenlty i took break in writing there caused by lack of free time but I am planning to return to writing.",
-      "link": "https://ptfoplayer.github.io/technews/#/"
+      "link": "https://ptfoplayer.github.io/technews/#/",
+      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/technews"
     }
   ]
 }

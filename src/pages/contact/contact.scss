@@ -1,29 +1,90 @@
 .contact {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .segment {
-    margin-bottom: 5vh;
-    background-color: var(--element-bg);
-    width: 100vw;
+  margin-bottom: 5vh;
+  background-color: var(--element-bg);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2vh;
+  padding-bottom: 5vh;
+  .row {
+    width: 75vw;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 2vh;
-    padding-bottom: 5vh;
-    .row {
-        width: 75vw;
-        display: flex;
-        justify-content: space-between;
-        p {
-            width: 50vw;
-        }
-        img {
-            width: 15vw;
-            height: auto;
-            border-radius: 10%;
-        }
+    justify-content: space-between;
+    p {
+      width: 50vw;
     }
+    img {
+      width: 15vw;
+      height: auto;
+      border-radius: 10%;
+    }
+  }
+
+  input[type="submit"],
+  input[type="reset"],
+  button {
+    width: 12vw;
+    margin-right: 20px;
+    margin-left: 0px;
+    margin-top: 0px;
+    font-size: var(--fontsize_topbar);
+    font-weight: 300;
+    cursor: pointer;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    @media screen and (max-width: 1024px) {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+
+  input[type="submit"]:hover,
+  input[type="reset"]:hover,
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .buttons {
+    display: flex;
+    width: 80%;
+    margin-top: 2vh;
+  }
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .columns,
+  .content {
+    display: flex;
+    width: 80%;
+    margin-top: 2vh;
+  }
+
+  .columns {
+    font-size: 3vh;
+    .left,
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-right: 1vw;
+    }
+  }
+  .content {
+    flex-direction: column;
+  }
 }
