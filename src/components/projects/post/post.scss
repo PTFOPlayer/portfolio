@@ -10,13 +10,13 @@
   padding-bottom: 5vh;
   img {
     margin: 1vw;
-    border-radius: 50%;
+    border-radius: 2vw;
     width: 32vw;
     height: 32vw;
 
     @media (min-width: 1025px) {
-      width: 12vw;
-      height: 12vw;
+      width: 25%;
+      height: auto;
     }
   }
 
@@ -34,7 +34,7 @@
       justify-content: space-between;
     }
   }
-  width: 75vw;
+  width: 65%;
   ul {
     list-style: none;
     display: flex;
