@@ -1,60 +1,79 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Paragraph, Title, Note, CodeBlock } from '../../components/tutorial/Tutorial';
 
-import './tutorial.scss';
+import { SubtitleData, TextData, Header } from "./Tutorial.d";
 
-interface Element {
-  name: string;
-  element: number;
-  text: string;
-  type: string;
-}
-
-function resolver(element: Element) {
-  let type = element.type;
-  switch (type) {
-    case "paragraph":
-    case "text":
-      return (<Paragraph>{element.text}</Paragraph>)
-    case "title":
-      return (<Title>{element.text}</Title>)
-    case "note":
-      return (<Note>{element.text}</Note>)
-    case "codeblock":
-      return (<CodeBlock>{element.text}</CodeBlock>)
-    default:
-      return null
-
-  }
-}
+import "./tutorial.scss";
 
 export default function Tutorial() {
   let location = useLocation();
-  let id = location.pathname.split('/')[2];
+  let id = location.pathname.split("/")[2];
 
-  let [data, setData] = useState<Array<Element> | null>(null);
-
+  const [postHeader, setPostHeader] = useState<Array<Header> | undefined>(
+    undefined
+  );
+  const [data, setData] = useState<Array<SubtitleData | TextData> | undefined>(
+    undefined
+  );
 
   useEffect(() => {
+    fetch("http://patryk.tofil.eu/backend/api/get_post_by_id/" + id)
+      .then((res) => {
+        return res.json();
+      })
+      .then((res) => {
+        setPostHeader(res);
+      })
+      .catch((err) => {
+        console.error(err);
+        setPostHeader(undefined);
+      });
 
-    fetch("http://localhost:2223/api/post_content/" + id)
+    fetch("http://patryk.tofil.eu/backend/api/get_content_by_post_id/" + id)
       .then((res) => {
         return res.json();
       })
       .then((res) => {
         setData(res);
-      }).catch((err) => {
+      })
+      .catch((err) => {
         console.error(err);
-        setData(null);
+        setData(undefined);
       });
   }, [id]);
 
+  if (data !== undefined) {
+    if ((data[0] as TextData).text_data !== undefined) {
+      console.log("instance");
+    }
+    if ((data[1] as TextData).text_data !== undefined) {
+      console.log("instance2");
+    }
+  }
+
   return (
     <div className="tutorial">
-      {
-        data ? data.map((element, key) => <div className="content" key={key}>{resolver(element)}</div>) : null
-      }
+      <h1>{postHeader ? postHeader[0].post_full_name : null}</h1>
+      {data
+        ? data.map((e, key) => {
+            return (
+              <div className="content">
+                <MatchData key={key} data={e} />
+              </div>
+            );
+          })
+        : null}
     </div>
-  )
+  );
+}
+
+function MatchData(props: { data: SubtitleData | TextData }) {
+  let data = props.data;
+  if ((data as SubtitleData).subtitle_data !== undefined) {
+    return <h2>{(data as SubtitleData).subtitle_data}</h2>;
+  } else if ((data as TextData).text_data !== undefined) {
+    return <p>{(data as TextData).text_data}</p>;
+  } else {
+    return <></>;
+  }
 }
