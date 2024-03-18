@@ -23,9 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 #backend
-/backend/node_modules
-/backend/src/data.json
-/backend/prod
-/backend/database*
+/backend
 
 /src/pages/managment
