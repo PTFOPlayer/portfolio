@@ -67,10 +67,6 @@
   }
 }
 
-.hidden {
-  display: none;
-}
-
 .bmc {
   margin-left: 8px;
   margin-right: 8px;
@@ -116,5 +112,21 @@
   button {
     background: none;
     border: none;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hiddenOnDesktop {
+  @media screen and (min-width: 1024px) {
+    display: none !important;
+  }
+}
+
+.hiddenOnMobile {
+  @media screen and (max-width: 1023px) {
+    display: none !important;
   }
 }

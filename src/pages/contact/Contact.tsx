@@ -79,13 +79,13 @@ function Form() {
               required
             />
             <input
-              type="text"
+              type="email"
               name="email"
               id="email"
               value={mail}
               onChange={(e) => setMail(e.target.value)}
               required
-              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}"
             />
           </div>
         </div>

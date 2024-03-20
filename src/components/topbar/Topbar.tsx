@@ -15,100 +15,75 @@ export default function Topbar() {
     { url: "/#/contact", name: "Contact" },
     { url: "/#/tutorials", name: "Tutorials" },
   ];
-
-  const width = window.innerWidth;
-
-  if (width < 1024) {
-    return <MobileTopbar list={list} />;
-  } else {
-    return <DestkopTopbar list={list} />;
-  }
-}
-
-function MobileTopbar(props: { list: Array<Item> }) {
   const [display, setDisplay] = useState("hidden");
+  let handle_click = () => {
+    display === "top-list" ? setDisplay("hidden") : setDisplay("top-list");
+  };
+
   return (
     <>
       <div className="top">
-        <div className="top-left"></div>
+        <div className="top-left">
+          <Gh className="hiddenOnMobile" />
+        </div>
         <div className="top-center">
-          <a href="https://github.com/PTFOPlayer/">
-            <i className="fab fa-github"></i>
-          </a>
-          <a className="bmc" href="https://www.buymeacoffee.com/WhiskyAKM">
-            <img
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-              alt="Buy Me A Coffee"
-            />
-          </a>
+          <Gh className="hiddenOnDesktop" />
+          <Bmc className="hiddenOnDesktop" />
+          <TopList
+            list={list}
+            display={"top-list"}
+            className="hiddenOnMobile"
+          />
         </div>
         <div className="top-right">
-          <button
-            onClick={() => {
-              display === "top-list"
-                ? setDisplay("hidden")
-                : setDisplay("top-list");
-            }}
-          >
+          <Bmc className="hiddenOnMobile" />
+          <button onClick={handle_click} className="hiddenOnDesktop">
             <i className="fa-solid fa-bars dropdown"></i>
           </button>
         </div>
       </div>
-
-      <ul className={display}>
-        {props.list.map((e, key) => {
-          return (
-            <li className="top-list-item" key={key}>
-              <a href={e.url} className="inherit">
-                {e.name}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <TopList list={list} display={display} />
     </>
   );
 }
 
-function DestkopTopbar(props: { list: Array<Item> }) {
+function Bmc(props: { className?: string }) {
   return (
-    <div className="top">
-      <div className="top-left">
-        <a href="https://github.com/PTFOPlayer/">
-          <i className="fab fa-github"></i>
-        </a>
-      </div>
-      <div className="top-center">
-        <ul className="top-list">
-          {props.list.map((e, key) => {
-            return (
-              <li className="top-list-item" key={key}>
-                <a href={e.url} className="inherit">
-                  {e.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="top-right">
-        <ul className="top-list">
-          <a className="bmc" href="https://www.buymeacoffee.com/WhiskyAKM">
-            <img
-              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-              alt="Buy Me A Coffee"
-            />
-          </a>
-          <li className="top-list-item">
-            <a
-              className="top-list-item"
-              href="https://ptfoplayer.github.io/technews/#/"
-            >
-              Technews
+    <a
+      className={"bmc " + props.className}
+      href="https://www.buymeacoffee.com/WhiskyAKM"
+    >
+      <img
+        src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+        alt="Buy Me A Coffee"
+      />
+    </a>
+  );
+}
+
+function Gh(props: { className?: string }) {
+  return (
+    <a href="https://github.com/PTFOPlayer/" className={props.className}>
+      <i className="fab fa-github"></i>
+    </a>
+  );
+}
+function TopList(props: {
+  list: Array<Item>;
+  display: string;
+  className?: string;
+}) {
+  return (
+    <ul className={props.display + " " + props.className}>
+      {props.list.map((e, key) => {
+        return (
+          <li className="top-list-item" key={key}>
+            <a href={e.url} className="inherit">
+              {e.name}
             </a>
           </li>
-        </ul>
-      </div>
-    </div>
+        );
+      })}
+    </ul>
   );
 }
