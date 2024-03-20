@@ -1,0 +1,14 @@
+.posts_header {
+  margin-bottom: 5vh;
+  background-color: var(--element-bg);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2vh;
+  padding-bottom: 5vh;
+  .langs {
+    width: 25vw;
+  }
+}
