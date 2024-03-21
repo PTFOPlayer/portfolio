@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "./tutorials.scss"
+import "./tutorials.scss";
 import { ShortPost } from "./Tutorials.d";
 export default function TutorialsComponent() {
   const [posts, setPosts] = useState<Array<ShortPost> | undefined>();
   useEffect(() => {
-    fetch("http://patryk.tofil.eu/backend/api/get_posts_short")
+    fetch("https://www.patryk.tofil.eu/backend/api/get_posts_short")
       .then((res) => res.json())
-      .then((res) => setPosts(res));
+      .then((res) => setPosts(res))
+      .catch((e) => console.log(e));
   }, []);
 
   return (
