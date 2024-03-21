@@ -17,7 +17,7 @@ export default function Tutorial() {
   );
 
   useEffect(() => {
-    fetch("http://patryk.tofil.eu/backend/api/get_post_by_id/" + id)
+    fetch("https://www.patryk.tofil.eu/backend/api/get_post_by_id/" + id)
       .then((res) => {
         return res.json();
       })
@@ -29,7 +29,7 @@ export default function Tutorial() {
         setPostHeader(undefined);
       });
 
-    fetch("http://patryk.tofil.eu/backend/api/get_content_by_post_id/" + id)
+    fetch("https://www.patryk.tofil.eu/backend/api/get_content_by_post_id/" + id)
       .then((res) => {
         return res.json();
       })
