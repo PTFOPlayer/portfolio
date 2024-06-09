@@ -9,12 +9,11 @@ import Tutorials from "./pages/Tutorials/Tutorials";
 import Tutorial from "./pages/tutorial/Tutorial";
 import Managment from "./pages/managment/Managment";
 import Carrier from "./pages/carrier/Carrier";
-
 function App() {
   return (
     <div className="App-header">
+      <Topbar />
       <Router>
-        <Topbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
