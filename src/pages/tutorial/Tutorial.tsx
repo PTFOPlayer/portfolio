@@ -1,79 +1,57 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
-import { SubtitleData, TextData, Header } from "./Tutorial.d";
+import ReactMarkdown from 'react-markdown'
+import { MDPost } from "./Tutorial.d";
+import remarkGfm from 'remark-gfm'
 
 import "./tutorial.scss";
+import axios from "axios";
 
 export default function Tutorial() {
   let location = useLocation();
   let id = location.pathname.split("/")[2];
 
-  const [postHeader, setPostHeader] = useState<Array<Header> | undefined>(
-    undefined
-  );
-  const [data, setData] = useState<Array<SubtitleData | TextData> | undefined>(
-    undefined
-  );
+  const [post, setPost] = useState<MDPost>();
+  const [content, setContent] = useState<string>("");
 
   useEffect(() => {
-    fetch("https://www.patryk.tofil.eu/backend/api/get_post_by_id/" + id)
+    fetch("https://www.patryk.tofil.eu/backend/api/get_post/" + id)
       .then((res) => {
         return res.json();
       })
       .then((res) => {
-        setPostHeader(res);
+        console.log(res[0]);
+        setPost(res[0]);
       })
       .catch((err) => {
         console.error(err);
-        setPostHeader(undefined);
-      });
-
-    fetch("https://www.patryk.tofil.eu/backend/api/get_content_by_post_id/" + id)
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        setData(res);
-      })
-      .catch((err) => {
-        console.error(err);
-        setData(undefined);
+        setPost(undefined);
       });
   }, [id]);
 
-  if (data !== undefined) {
-    if ((data[0] as TextData).text_data !== undefined) {
-      console.log("instance");
-    }
-    if ((data[1] as TextData).text_data !== undefined) {
-      console.log("instance2");
-    }
+  if (post) {
+    axios
+      .get(post.post_url, {
+        withCredentials: false,
+      })
+      .then((res) => res.data)
+      .then((res) => {
+        console.log(res);
+        setContent(res);
+      })
+      .catch((err) => {
+        console.error(err);
+        setContent("");
+      });
   }
 
   return (
     <div className="tutorial">
-      <h1>{postHeader ? postHeader[0].post_full_name : null}</h1>
-      {data
-        ? data.map((e, key) => {
-            return (
-              <div className="content">
-                <MatchData key={key} data={e} />
-              </div>
-            );
-          })
-        : null}
+      <div style={{"width": "80%"}}>
+
+      <ReactMarkdown children={content} rehypePlugins={[remarkGfm]}></ReactMarkdown>
+      </div>
+      
     </div>
   );
-}
-
-function MatchData(props: { data: SubtitleData | TextData }) {
-  let data = props.data;
-  if ((data as SubtitleData).subtitle_data !== undefined) {
-    return <h2>{(data as SubtitleData).subtitle_data}</h2>;
-  } else if ((data as TextData).text_data !== undefined) {
-    return <p>{(data as TextData).text_data}</p>;
-  } else {
-    return <></>;
-  }
 }

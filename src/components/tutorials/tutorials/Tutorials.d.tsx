@@ -1,4 +1,4 @@
-export interface ShortPost {
+export interface MDPost {
     post_id: number,
-    post_short_name: string
+    post_name: string
 }
