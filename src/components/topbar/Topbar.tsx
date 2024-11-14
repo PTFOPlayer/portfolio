@@ -13,7 +13,7 @@ export default function Topbar() {
     { url: "/#/projects", name: "Projects" },
     { url: "/#/career", name: "Career" },
     { url: "/#/contact", name: "Contact" },
-    { url: "/#/tutorials", name: "Tutorials" },
+    { url: "/#/tutorials", name: "Courses" },
   ];
   const [display, setDisplay] = useState("hidden");
   let handle_click = () => {
