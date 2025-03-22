@@ -17,9 +17,9 @@
 
 .courses_list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
-    li {
+    a {
         list-style: none;
         margin-left: 8px;
         margin-right: 8px;
@@ -28,7 +28,7 @@
         @media (min-width:1025px) {
             margin-right: 20px;
             margin-left: 0px;
-            margin-top: 0px;
+            margin-top: 25px;
         }
 
         font-size: 30px;
@@ -40,15 +40,7 @@
         padding: 5px;
     }
 
-    li:hover {
+    a:hover {
         background-color: rgba(131, 131, 131, 0.5);
-    }
-
-
-    a {
-        text-decoration: none;
-        font-size: inherit;
-        font-weight: inherit;
-        color: inherit;
     }
 }
