@@ -6,7 +6,6 @@ import Topbar from "./components/topbar/Topbar";
 import Projects from "./pages/projects/Projects";
 import Contact from "./pages/contact/Contact";
 import Tutorials from "./pages/Tutorials/Tutorials";
-import Managment from "./pages/managment/Managment";
 import Carrier from "./pages/carrier/Carrier";
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/career" element={<Carrier />} />
-          <Route path="/managment" element={<Managment />} />
         </Routes>
       </Router>
     </div>

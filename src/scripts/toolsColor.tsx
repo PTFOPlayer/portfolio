@@ -1,11 +1,11 @@
 import React from "react";
 
-export default class toolColor {
-  public static tool(tool: String) {
+export default class ToolColor {
+  public static tool(tool: string) {
 
     tool = tool.toLowerCase()
 
-    let toolSwitch = (t: String) => {
+    let toolSwitch = (t: string) => {
       switch (t) {
         case "rust": 
           return <p className="rust"><i className='fab fa-rust' /> Rust </p>
@@ -41,7 +41,7 @@ export default class toolColor {
     return (<>{toolSwitch(tool)}</>)
   }
 
-  public static tools(tools:Array<String>) {
+  public static tools(tools:Array<string>) {
     return (
       <>
         {tools.map((t, key: number) => (

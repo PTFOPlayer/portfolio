@@ -1,6 +1,6 @@
 import * as React from "react";
-import "./toolset.scss"
-import data from "../../../assets/toolset.json"
+import "./toolset.scss";
+import data from "../../../assets/toolset.json";
 import Tool from "../tool/Tool";
 
 export default function Toolset() {
@@ -10,9 +10,11 @@ export default function Toolset() {
         <h1>Why those tools?</h1>
         <p>Qucik explanation why I choose to learn that toolset.</p>
       </div>
-      {data.tools.map((e, key: number)=> (
-        <div key={key}>{Tool(e)}</div>
+      {data.tools.map((e) => (
+        <div key={Array.isArray(e.tool) ? e.tool.join("-") : e.tool}>
+          {Tool(e)}
+        </div>
       ))}
     </>
-  )
+  );
 }
