@@ -11,9 +11,9 @@ export default function Career() {
         </h1>
       </div>
       <div className="careerexp">
-        {data.map((e, key) => {
+        {data.map((e) => {
           return (
-            <div key={key} className="segment">
+            <div key={e.title} className="segment">
               <div className="titledate">
                 <h2 className="title">{e.title}</h2>
                 <h2 className="date">

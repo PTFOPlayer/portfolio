@@ -75,9 +75,9 @@ function TopList(props: {
 }) {
   return (
     <ul className={props.display + " " + props.className}>
-      {props.list.map((e, key) => {
+      {props.list.map((e) => {
         return (
-          <li className="top-list-item" key={key}>
+          <li className="top-list-item" key={e.url}>
             <a href={e.url} className="inherit">
               {e.name}
             </a>

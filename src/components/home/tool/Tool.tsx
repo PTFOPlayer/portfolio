@@ -1,5 +1,5 @@
 import React from "react";
-import toolsColor from "../../../scripts/toolsColor";
+import ToolColor from "../../../scripts/toolsColor";
 import "./tool.scss"
 
 import { motion, useAnimation } from "framer-motion";
@@ -29,8 +29,8 @@ export default function Tool(e:any) {
         animate={control}>
         <div className="title">
           {typeof e.tool === "object" ? 
-          <h3><ul>{toolsColor.tools(e.tool)}</ul></h3> :
-          <h1>{toolsColor.tool(e.tool)}</h1>}
+          <h3><ul>{ToolColor.tools(e.tool)}</ul></h3> :
+          <h1>{ToolColor.tool(e.tool)}</h1>}
         </div>
         {e.description ? <span>{e.description}</span> : null}
       </motion.div>

@@ -77,7 +77,7 @@ export default function Description() {
           ) : (
             <>
               <i className="fa-brands fa-windows" />
-              <>Windows</>
+              Windows
             </>
           )}
         </p>
