@@ -1,0 +1,40 @@
+{
+  "tools": [
+    {
+      "tool": "Rust",
+      "description": "My go-to language for systems programming. Rust's borrow checker ensures memory safety without garbage collection, while its expressive type system catches errors at compile time. This means I can build fast, reliable software with confidence - no segfaults, no data races, just clean, performant code."
+    },
+    {
+      "tool": "C++",
+      "description": "My bridge to low-level programming. While I prefer Rust for new projects, C++ taught me invaluable lessons about memory management, performance optimization, and object-oriented design. It's perfect for understanding hardware-level concepts and rewriting legacy systems in modern languages."
+    },
+    {
+      "tool": ["JavaScript", "TypeScript", "React", "SCSS"],
+      "description": "My frontend powerhouse. TypeScript brings type safety to JavaScript, eliminating entire classes of bugs. React's component model makes UI development intuitive and maintainable. SCSS extends CSS with variables, mixins, and nesting - giving me the styling power I need without the limitations of plain CSS."
+    },
+    {
+      "tool": "Python",
+      "description": "My Swiss Army knife for rapid prototyping and automation. When performance isn't critical but development speed is, Python shines. Its clean syntax and vast ecosystem make it perfect for scripting, data processing, and testing ideas quickly before implementing them in other languages."
+    },
+    {
+      "tool": "CUDA",
+      "description": "NVIDIA's parallel computing platform for GPU acceleration. I use CUDA when I need maximum performance for compute-intensive tasks like machine learning inference, scientific simulations, or real-time video processing. The ability to harness thousands of GPU cores transforms hours of computation into minutes."
+    },
+    {
+      "tool": "ROCm",
+      "description": "AMD's open-source alternative to CUDA for GPU computing. ROCm gives me flexibility in hardware choices while maintaining high performance for ML workloads. Its open ecosystem aligns with my preference for open-source tools and provides an alternative GPU compute stack."
+    },
+    {
+      "tool": "Llama.cpp",
+      "description": "Efficient LLM inference on consumer hardware. Llama.cpp enables running large language models locally without requiring enterprise-grade GPUs. It's my go-to for experimenting with AI models, building local assistants, and understanding transformer architectures without cloud dependencies."
+    },
+    {
+      "tool": "MongoDB",
+      "description": "My document database of choice for modern applications. MongoDB's JSON-like structure maps perfectly to how I think about data in JavaScript/TypeScript projects. It's schema-flexible, horizontally scalable, and ideal for rapid iteration without the overhead of complex relational schemas."
+    },
+    {
+      "tool": "MySQL",
+      "description": "The battle-tested relational database for structured data. When data integrity and complex relationships matter, MySQL delivers. ACID compliance, powerful querying, and mature tooling make it the right choice for applications that need robust transactional support and structured data modeling."
+    }
+  ]
+}

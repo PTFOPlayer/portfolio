@@ -1,0 +1,116 @@
+// Contact page styles - modern card design
+
+.contact-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl, 4rem) var(--spacing-lg, 2rem);
+  background-color: var(--element-bg);
+  width: 100%;
+  box-sizing: border-box;
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl, 4rem);
+
+    h2 {
+      font-size: var(--font-size-3xl, 3rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--color-text-primary, #ffffff), var(--color-accent, #61dafb));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0 0 var(--spacing-md, 1.5rem);
+    }
+
+    p {
+      color: var(--color-text-secondary, #a0a0a0);
+      font-size: var(--font-size-lg, 1.25rem);
+      margin: 0;
+    }
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg, 2rem);
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg, 2rem);
+    padding: var(--spacing-xl, 3rem);
+    background: var(--color-bg-secondary, #1a1a1a);
+    border-radius: var(--radius-xl, 16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow-md, 0 4px 8px rgba(0, 0, 0, 0.3));
+    text-decoration: none;
+    transition: all var(--transition-base, 300ms);
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--accent-color, rgba(97, 218, 251, 0.3));
+      box-shadow: var(--shadow-lg, 0 8px 16px rgba(0, 0, 0, 0.4)), 0 0 30px rgba(97, 218, 251, 0.1);
+
+      .contact-icon {
+        transform: scale(1.1);
+        background: var(--accent-color, var(--color-accent, #61dafb));
+
+        i {
+          color: white;
+        }
+      }
+
+      .contact-arrow {
+        transform: translateX(4px);
+        opacity: 1;
+      }
+    }
+
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-lg, 12px);
+      background: rgba(97, 218, 251, 0.1);
+      flex-shrink: 0;
+      transition: all var(--transition-base, 300ms);
+
+      i {
+        font-size: 1.75rem;
+        color: var(--color-accent, #61dafb);
+        transition: color var(--transition-base, 300ms);
+      }
+    }
+
+    .contact-info {
+      flex: 1;
+
+      h3 {
+        font-size: var(--font-size-xl, 1.5rem);
+        font-weight: 700;
+        color: var(--color-text-primary, #ffffff);
+        margin: 0 0 var(--spacing-xs, 0.5rem);
+      }
+
+      p {
+        color: var(--color-text-secondary, #b0b0b0);
+        line-height: 1.6;
+        font-size: var(--font-size-sm, 0.9rem);
+        margin: 0;
+      }
+    }
+
+    .contact-arrow {
+      opacity: 0.5;
+      transition: all var(--transition-base, 300ms);
+
+      i {
+        font-size: 1.25rem;
+        color: var(--color-text-secondary, #a0a0a0);
+      }
+    }
+  }
+}

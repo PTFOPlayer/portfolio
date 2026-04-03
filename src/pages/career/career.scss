@@ -1,0 +1,115 @@
+// Career page styles - modern timeline design
+
+.career-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl, 4rem) var(--spacing-lg, 2rem);
+  background-color: var(--element-bg);
+  width: 100%;
+  box-sizing: border-box;
+
+  .career-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl, 4rem);
+
+    h2 {
+      font-size: var(--font-size-3xl, 3rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--color-text-primary, #ffffff), var(--color-accent, #61dafb));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin: 0 0 var(--spacing-md, 1.5rem);
+    }
+
+    p {
+      color: var(--color-text-secondary, #a0a0a0);
+      font-size: var(--font-size-lg, 1.25rem);
+      margin: 0;
+    }
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl, 3rem);
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: var(--spacing-lg, 2rem);
+
+    .timeline-marker {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+
+      .timeline-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--color-accent, #61dafb);
+        box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+      }
+
+      .timeline-line {
+        width: 2px;
+        flex: 1;
+        background: linear-gradient(180deg, var(--color-accent, #61dafb), transparent);
+        margin-top: var(--spacing-sm, 1rem);
+      }
+    }
+
+    .timeline-content {
+      flex: 1;
+      background: var(--color-bg-secondary, #1a1a1a);
+      border-radius: var(--radius-xl, 16px);
+      padding: var(--spacing-xl, 3rem);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: var(--shadow-md, 0 4px 8px rgba(0, 0, 0, 0.3));
+      transition: all var(--transition-base, 300ms);
+
+      &:hover {
+        border-color: rgba(97, 218, 251, 0.2);
+        box-shadow: var(--shadow-lg, 0 8px 16px rgba(0, 0, 0, 0.4)), 0 0 30px rgba(97, 218, 251, 0.1);
+      }
+
+      .timeline-header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs, 0.5rem);
+        margin-bottom: var(--spacing-md, 1.5rem);
+
+        @media (min-width: 640px) {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        h3 {
+          font-size: var(--font-size-xl, 1.5rem);
+          font-weight: 700;
+          color: var(--color-text-primary, #ffffff);
+          margin: 0;
+        }
+
+        .timeline-date {
+          font-size: var(--font-size-sm, 0.875rem);
+          color: var(--color-accent, #61dafb);
+          background: rgba(97, 218, 251, 0.1);
+          padding: var(--spacing-xs, 0.5rem) var(--spacing-sm, 1rem);
+          border-radius: var(--radius-full, 9999px);
+          white-space: nowrap;
+        }
+      }
+
+      p {
+        color: var(--color-text-secondary, #b0b0b0);
+        line-height: 1.8;
+        font-size: var(--font-size-base, 1rem);
+        margin: 0;
+      }
+    }
+  }
+}

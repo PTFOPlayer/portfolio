@@ -1,0 +1,216 @@
+.defaults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dev {
+  @extend .defaults;
+  color: #f02a2a;
+}
+
+.rust {
+  @extend .defaults;
+  color: #d45404;
+  :hover {
+    @extend .spin;
+  }
+}
+.python {
+  @extend .defaults;
+  color: #306998;
+  :hover {
+    @extend .spin;
+  }
+}
+.js {
+  @extend .defaults;
+  color: #f0db4f;
+}
+.ts {
+  @extend .defaults;
+  color: #1573c1;
+}
+.cpp {
+  @extend .defaults;
+  color: #d26383;
+}
+.c {
+  @extend .defaults;
+  color: #00427e;
+}
+.react {
+  @extend .defaults;
+  color: #61dbfb;
+  :hover {
+    @extend .spin;
+  }
+}
+.sass {
+  @extend .defaults;
+  color: #c26191;
+}
+.mongodb {
+  @extend .defaults;
+  color: #07ac4f;
+}
+.mysql {
+  @extend .defaults;
+  color: #e59208;
+}
+.linux {
+  @extend .defaults;
+  color: #ffd134;
+  :hover {
+    @extend .jump;
+  }
+}
+.windows {
+  @extend .defaults;
+  color: #0178d4;
+}
+.ubuntu {
+  @extend .defaults;
+  color: #d14514;
+}
+.manjaro {
+  @extend .defaults;
+  color: #017e36;
+}
+.fedora {
+  @extend .defaults;
+  color: #4e9dd3;
+}
+.docker {
+  @extend .defaults;
+  color: #0397f5;
+}
+.shell {
+  @extend .defaults;
+  color: #499355;
+}
+.css {
+  @extend .defaults;
+  color: #0068ba;
+}
+.cuda {
+  @extend .defaults;
+  color: #76b900;
+}
+.rocm {
+  @extend .defaults;
+  color: #ed1c24;
+}
+.llamacpp {
+  @extend .defaults;
+  color: #00d4aa;
+}
+
+.spin {
+  animation: spin 3s linear infinite;
+}
+
+.jump {
+  animation: jump 0.5s linear infinite;
+}
+
+.glitch {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation: clip 3000ms calc($i * -300ms) linear infinite,
+        glitch 500ms calc(random(1000) * -1ms) linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(-0px);
+  }
+
+  10% {
+    transform: translateY(-5px);
+  }
+
+  20% {
+    transform: translateY(-9px);
+  }
+
+  30% {
+    transform: translateY(-12px);
+  }
+
+  40% {
+    transform: translateY(-14px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  60% {
+    transform: translateY(-14px);
+  }
+
+  70% {
+    transform: translateY(-12px);
+  }
+
+  80% {
+    transform: translateY(-9px);
+  }
+
+  90% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(-0px);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(0);
+    color: #fff;
+  }
+
+  85% {
+    transform: translateX(random(10) - 5px);
+    color: #4e9a26;
+  }
+
+  90% {
+    transform: translateX(random(10) - 5px);
+    color: #ac1212;
+  }
+
+  95% {
+    transform: translateX(random(10) - 5px);
+    color: #fff;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes clip {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 120%, 0% 120%);
+  }
+
+  100% {
+    clip-path: polygon(0 -70%, 100% -80%, 100% 0%, 0% 50%);
+  }
+}
