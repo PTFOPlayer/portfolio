@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .defaults {
   display: flex;
   justify-content: center;
@@ -118,7 +120,7 @@
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
       animation: clip 3000ms calc($i * -300ms) linear infinite,
-        glitch 500ms calc(random(1000) * -1ms) linear infinite;
+        glitch 500ms calc(math.random(1000) * -1ms) linear infinite;
     }
   }
 }
@@ -186,17 +188,17 @@
   }
 
   85% {
-    transform: translateX(random(10) - 5px);
+    transform: translateX(math.random(10) - 5px);
     color: #4e9a26;
   }
 
   90% {
-    transform: translateX(random(10) - 5px);
+    transform: translateX(math.random(10) - 5px);
     color: #ac1212;
   }
 
   95% {
-    transform: translateX(random(10) - 5px);
+    transform: translateX(math.random(10) - 5px);
     color: #fff;
   }
 

@@ -55,7 +55,7 @@ export default function Contact() {
   return (
     <section className="contact-section" ref={ref}>
       <div className="contact-header">
-        <h2>Get In Touch</h2>
+        <h1>Get In Touch</h1>
         <p>Feel free to reach out through any of these channels</p>
       </div>
 
@@ -75,6 +75,7 @@ export default function Contact() {
             variants={cardVariants}
             whileHover={{ y: -8 }}
             style={{ "--accent-color": contact.color } as React.CSSProperties}
+            aria-label={`Contact via ${contact.title} (opens in new tab)`}
           >
             <div className="contact-icon">
               <i className={contact.icon} />

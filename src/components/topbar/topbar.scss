@@ -1,7 +1,10 @@
-.top {
+.topbar-wrapper {
   position: sticky;
   top: 0;
   z-index: var(--z-sticky, 200);
+}
+
+.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,19 +41,28 @@
 }
 
 .top-list-item {
-  padding: var(--spacing-sm, 1rem) var(--spacing-md, 1.5rem);
   border-radius: var(--radius-md, 8px);
   transition: all var(--transition-base, 300ms);
   cursor: pointer;
   font-size: var(--font-size-base, 1rem);
-  color: var(--color-text-secondary, #a0a0a0);
-  text-decoration: none;
   display: block;
+
+  a {
+    display: block;
+    padding: var(--spacing-sm, 1rem) var(--spacing-md, 1.5rem);
+    color: var(--color-text-secondary, #a0a0a0);
+    text-decoration: none;
+    border-radius: var(--radius-md, 8px);
+    width: 100%;
+    box-sizing: border-box;
+  }
 
   &:hover {
     background: var(--color-accent-light, rgba(97, 218, 251, 0.1));
-    color: var(--color-accent, #61dafb);
-    transform: translateY(-2px);
+    
+    a {
+      color: var(--color-accent, #61dafb);
+    }
   }
 
   &:focus-visible {

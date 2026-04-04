@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://patryk.tofil.eu/sitemap.xml

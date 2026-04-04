@@ -26,7 +26,7 @@ export default function Career() {
   return (
     <section className="career-section" ref={ref}>
       <div className="career-header">
-        <h2>My Career</h2>
+        <h1>My Career</h1>
         <p>Professional journey and work experience</p>
       </div>
 

@@ -41,7 +41,7 @@ export default function Tutorials() {
   return (
     <section className="tutorials-section" ref={ref}>
       <div className="tutorials-header">
-        <h2>Tutorials</h2>
+        <h1>Tutorials</h1>
         <p>Free educational content (in Polish)</p>
       </div>
 
@@ -60,6 +60,7 @@ export default function Tutorials() {
             className="tutorial-card"
             variants={cardVariants}
             whileHover={{ y: -8 }}
+            aria-label={`Open ${course.title} (opens in new tab)`}
           >
             <div className="tutorial-icon">
               <i className={course.icon} />

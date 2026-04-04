@@ -1,18 +1,26 @@
 [
   {
     "years": {
-      "beginning": "june 2019",
-      "end": "september 2019"
+      "beginning": "June 2019",
+      "end": "September 2019"
     },
-    "title": "First Job - Intership in Atmar",
-    "text": "It was my first job. My job scope was to pack ready product, put sticker on the box and send it to client. I started learning about servers there. I already knew a lot about computers already, but there I was albe to get a deeper understanding of underlying hardware."
+    "title": "Internship at Atmar",
+    "text": "First job experience. Learned about server hardware, product assembly, and gained foundational understanding of enterprise IT infrastructure."
   },
   {
     "years": {
-        "beginning": "june 2020", 
-        "end": "not yet...?"
+      "beginning": "June 2020",
+      "end": "Present"
     },
-    "title": "That is kinda complicated - continuation of work in Atmar",
-    "text": "It is complicated because I didn't stop working at Atmar technically, but it's not regular job. I am going there whenever their main technician is not available or there is need for more workforce with broad knowlage of hardware (it is episodical). On avarage I'm working there probably arround one full week in a month. At this point I am no longer only packing ready product but I am substitute for main technician, that's because I really quickly learned everything I could about hardware. They even send me to some training courses!"
+    "title": "Technician Replacement",
+    "text": "On-call technician covering for the main technician. Hardware troubleshooting, server maintenance, and supporting the technical team during peak periods."
+  },
+  {
+    "years": {
+      "beginning": "2025",
+      "end": "Present"
+    },
+    "title": "Main Technician / Product Manager",
+    "text": "Leading technical operations and managing product development. Overseeing hardware projects, coordinating with teams, and driving product strategy."
   }
 ]

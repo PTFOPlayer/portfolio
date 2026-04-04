@@ -7,7 +7,6 @@ import "../../styles/langs.scss";
 
 // ============ Types ============
 interface ElementData {
-  image: string | null;
   title: string;
   tools: string[];
   description: string;
@@ -18,8 +17,6 @@ interface ElementData {
 function ProjectCard(element: ElementData) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const image = element.image || "https://avatars.githubusercontent.com/u/35374730?v=4";
-
   return (
     <motion.article
       className="project-card"
@@ -29,9 +26,6 @@ function ProjectCard(element: ElementData) {
       transition={{ duration: 0.5, ease: "easeOut" }}
       whileHover={{ y: -8 }}
     >
-      <div className="project-image">
-        <img src={image} alt={element.title || "Project"} loading="lazy" />
-      </div>
       <div className="project-content">
         <div className="project-header">
           {element.title && <h3>{element.title}</h3>}
@@ -50,6 +44,7 @@ function ProjectCard(element: ElementData) {
             target="_blank"
             rel="noopener noreferrer"
             className="project-link"
+            aria-label={`View ${element.title} project (opens in new tab)`}
           >
             View Project <i className="fas fa-external-link-alt" />
           </a>
@@ -67,7 +62,7 @@ export default function Projects() {
   return (
     <section className="projects-section" ref={ref}>
       <div className="projects-header">
-        <h2>My Projects</h2>
+        <h1>My Projects</h1>
         <p>Things I've built and worked on</p>
       </div>
 

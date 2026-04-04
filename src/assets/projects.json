@@ -4,8 +4,7 @@
       "title": "rocm_smi_lib",
       "tools": ["rust", "C"],
       "description": "Rust crate providing rocm_smi functionalities. Currently supports only device getters/queries. It can be used to make diagnostics applications and/or overclocking software for Radeon products",
-      "link": "https://github.com/PTFOPlayer/rocm_lib",
-      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/rocm_lib"
+      "link": "https://github.com/PTFOPlayer/rocm_lib"
     },
     {
       "title": "rocm-rs",
@@ -41,15 +40,13 @@
       "title": "Portfolio",
       "tools": ["typescript", "react", "scss"],
       "description": "Hey you are here.",
-      "link": "http://patryk.tofil.eu",
-      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/portfolio"
+      "link": "http://patryk.tofil.eu"
     },
     {
       "title": "Technews",
       "tools": ["javascript", "react", "css"],
       "description": "My own newspaper on topic of leaks about future pc hardware from different brands, currenlty i took break in writing there caused by lack of free time but I am planning to return to writing.",
-      "link": "https://ptfoplayer.github.io/technews/#/",
-      "image": "https://opengraph.githubassets.com/2c23d8f4a037047c67cbf4bda80c809b9ccb38d41faa2c301c526ad03b0a1c01/PTFOPlayer/technews"
+      "link": "https://ptfoplayer.github.io/technews/#/"
     }
   ]
 }
